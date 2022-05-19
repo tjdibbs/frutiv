@@ -1,4 +1,14 @@
-import {Box, Button, Card, CardActionArea, CardContent, CardMedia, Typography, useTheme} from "@mui/material";
+import {
+    Box,
+    Button,
+    Card,
+    CardActionArea,
+    CardActions,
+    CardContent,
+    CardMedia,
+    Typography,
+    useTheme
+} from "@mui/material";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {FreeMode} from "swiper";
 import {topServices} from "../pages/LandingPage/data";
@@ -105,23 +115,24 @@ export default function TopServices (){
             {width && <Box className={"mobile-view"}>
                 {topServices.map((service, index)=>{
                     return(
-                        <Card key={index} elevation={7} sx={{height: "100%"}} className={"section-card"}>
-                            <CardActionArea sx={{display: "grid",height: "100%", placeItems: "center"}}>
-                                <CardMedia component={"img"} src={"/images/" + service.image} alt={service.title} sx={{maxWidth: "90%"}} />
-                                <CardContent sx={{textAlign: "center"}}>
-                                    <Typography component={"div"} variant={"subtitle1"} mb={2} fontWeight={700}>
-                                        {service.title}
-                                    </Typography>
-                                    <Typography component={"div"} variant={"subtitle2"} fontWeight={600}>
-                                        If you’re a business owner or marketing executive and you’re looking
-                                        for an awesome and enthusiastic partner to help you grow your business—from
-                                        strategy creation to execution and ongoing optimization, you’ve come to the
-                                        right place. Blue Corona helps companies increase leads and sales from the
-                                        web, differentiate their brand, and optimize their marketing cost.
-                                        The result? MORE BUSINESS GROWTH.
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
+                        <Card key={index} elevation={7} sx={{height: "100%", display: "grid", placeItems: "center"}} className={"section-card"}>
+                            <CardMedia component={"img"} src={"/images/" + service.image} alt={service.title} sx={{maxWidth: "90%"}} />
+                            <CardContent sx={{textAlign: "center"}}>
+                                <Typography component={"div"} variant={"subtitle1"} mb={2} fontWeight={700}>
+                                    {service.title}
+                                </Typography>
+                                <Typography component={"div"} variant={"subtitle2"} fontWeight={600}>
+                                    If you’re a business owner or marketing executive and you’re looking
+                                    for an awesome and enthusiastic partner to help you grow your business—from
+                                    strategy creation to execution and ongoing optimization, you’ve come to the
+                                    right place. Blue Corona helps companies increase leads and sales from the
+                                    web, differentiate their brand, and optimize their marketing cost.
+                                    The result? MORE BUSINESS GROWTH.
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button variant={"contained"} color={"secondary"} sx={{textTransform: "none", borderRadius: 10}}> Learn more </Button>
+                            </CardActions>
                         </Card>
                     )
                 })}
