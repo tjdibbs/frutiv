@@ -1,15 +1,20 @@
 import React from "react";
 import {
-    Avatar,
-    Box, Button,
-    Card,
-    CardContent, CardHeader, IconButton,
-    Stack, TextField,
-    Typography,
-    useTheme
+  Avatar,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  Container,
+  IconButton,
+  Stack,
+  TextField,
+  Typography,
+  useTheme,
 } from "@mui/material";
-import {Icon} from "@iconify/react";
-import {drive,} from "./data"
+import { Icon } from "@iconify/react";
+import { drive } from "./data";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import TopServices from "../../components/topServices";
 import Hub from "../../components/hub";
@@ -25,226 +30,422 @@ import { Navigation, Pagination } from "swiper";
 interface Props {}
 
 const Index: React.FC<Props> = (props): JSX.Element => {
-    const theme = useTheme()
-    const swiperRef = React.useRef<{slide(i: number): void}>(null)
+  const theme = useTheme();
+  const swiperRef = React.useRef<{ slide(i: number): void }>(null);
 
-    const SwiperButtonNext = React.forwardRef((props, ref: React.Ref<{slide(i: number): void}>)=>{
-        const swiper = useSwiper();
-        React.useImperativeHandle(ref,()=>({
-            slide(index: number){
-                swiper.slideTo(index)
-            }
-        }))
-        return null
-    })
-    return(
-        <div className="home-container">
-            <div className="home-wrapper">
-               <Box className={"section-front"}>
-                   <Box>
-                       <Typography className={"big-text"} mx={"auto"} mt={8} component={"h3"} variant={"h3"} fontWeight={800} maxWidth={800} textAlign={"center"}>
-                           Let’s get that audience You want, like a flowing stream
-                       </Typography>
-                   </Box>
-                   <Box sx={{my: 3}}>
-                       <Box className={"circle-container"}>
-                           <Box className={"circle optimize"} sx={{bgcolor: theme.palette.secondary.main}}>
-                               <Icon icon="simple-icons:googleoptimize" color="#fff" height="30" className={"icon"} />
-                               <Typography className={"primary-text"} component={"div"} variant={"subtitle1"} fontWeight={800} color={"inherit"}>
-                                   OPTIMIZE
-                               </Typography>
-                               <Typography component={"h5"} className={"secondary-text"} variant={"caption"}>Marketing Cost</Typography>
-                           </Box>
-                           <Box className={"circle increase"} sx={{bgcolor: theme.palette.primary.main}}>
-                               <Icon icon="icon-park-outline:increase" color="#fff" height="30" className={"icon"}/>
-                               <Typography className={"primary-text"} component={"div"} variant={"subtitle1"} fontWeight={800} color={"inherit"}>
-                                   INCREASE
-                               </Typography>
-                               <Typography className={"secondary-text"} component={"h5"} variant={"caption"}>Marketing Cost</Typography>
-                           </Box>
-                           <Box className={"circle different"} sx={{bgcolor: theme.palette.info.main}}>
-                               <Icon icon="ic:outline-web" color="#fff" height="30" className={"icon"}/>
-                               <Typography className={"primary-text"} component={"div"} variant={"subtitle1"} fontWeight={800} color={"inherit"}>
-                                   DIFFERENTIATE
-                               </Typography>
-                               <Typography className={"secondary-text"} component={"h5"} variant={"caption"}>Your Online</Typography>
-                           </Box>
-                       </Box>
-                   </Box>
-                   <Box className={"brief-about-text"} sx={{width: "100%"}}>
-                       <Typography component={"div"} variant={"subtitle2"} textAlign={"center"} fontWeight={600} position={"relative"} zIndex={100}>
-                           We believe in building partnerships, not acquiring clients. Above all,
-                           everything we do comes from the perspective of a business owner, and we
-                           treat your business like our own. We’re transparent about our methods,
-                           our pricing, and our deliverables. The best part? You get the peace of
-                           mind that we will bend over backwards to do whatever it takes to grow
-                           your business.
-                       </Typography>
-                   </Box>
-               </Box>
-                <Box className="section-method" sx={{mt: 10}}>
-                    <Typography component={"h1"} variant={"h5"} fontWeight={800} textAlign={"center"}>
-                        We also drive result through
-                    </Typography>
-                    <Stack flexWrap={"wrap"} direction={"row"} gap={3} sx={{mx: "auto" , my: 6}} justifyContent={"center"}>
-                        {
-                            drive.map((d, index)=>{
-                                let c = d.label.replace(" ","-").toLowerCase()
-                                return (
-                                    <Box className={"card "+c} key={index} sx={{borderColor: `${theme.palette.primary.main}!important`}}>
-                                        <Icon icon={d.name} color={theme.palette.primary.main} height="30" className={"icon"}  />
-                                        <Typography component={"div"} variant={"caption"} color={"primary"} fontWeight={500}>
-                                            {d.label}
-                                        </Typography>
-                                    </Box>
-                                )
-                            })
+  const SwiperButtonNext = React.forwardRef(
+    (props, ref: React.Ref<{ slide(i: number): void }>) => {
+      const swiper = useSwiper();
+      React.useImperativeHandle(ref, () => ({
+        slide(index: number) {
+          swiper.slideTo(index);
+        },
+      }));
+      return null;
+    }
+  );
+  return (
+    <Container className="home-container">
+      <div className="home-wrapper">
+        <Box className={"section-front"}>
+          <Box>
+            <Typography
+              className={"big-text"}
+              mx={"auto"}
+              mt={8}
+              component={"h3"}
+              variant={"h3"}
+              fontWeight={800}
+              maxWidth={800}
+              textAlign={"center"}
+            >
+              Let’s get that audience You want, like a flowing stream
+            </Typography>
+          </Box>
+          <Box sx={{ my: 3 }}>
+            <Box className={"circle-container"}>
+              <Box
+                className={"circle optimize"}
+                sx={{ bgcolor: theme.palette.secondary.main }}
+              >
+                <Icon
+                  icon="simple-icons:googleoptimize"
+                  color="#fff"
+                  height="30"
+                  className={"icon"}
+                />
+                <Typography
+                  className={"primary-text"}
+                  component={"div"}
+                  variant={"subtitle1"}
+                  fontWeight={800}
+                  color={"inherit"}
+                >
+                  OPTIMIZE
+                </Typography>
+                <Typography
+                  component={"h5"}
+                  className={"secondary-text"}
+                  variant={"caption"}
+                >
+                  Marketing Cost
+                </Typography>
+              </Box>
+              <Box
+                className={"circle increase"}
+                sx={{ bgcolor: theme.palette.primary.main }}
+              >
+                <Icon
+                  icon="icon-park-outline:increase"
+                  color="#fff"
+                  height="30"
+                  className={"icon"}
+                />
+                <Typography
+                  className={"primary-text"}
+                  component={"div"}
+                  variant={"subtitle1"}
+                  fontWeight={800}
+                  color={"inherit"}
+                >
+                  INCREASE
+                </Typography>
+                <Typography
+                  className={"secondary-text"}
+                  component={"h5"}
+                  variant={"caption"}
+                >
+                  Marketing Cost
+                </Typography>
+              </Box>
+              <Box
+                className={"circle different"}
+                sx={{ bgcolor: theme.palette.info.main }}
+              >
+                <Icon
+                  icon="ic:outline-web"
+                  color="#fff"
+                  height="30"
+                  className={"icon"}
+                />
+                <Typography
+                  className={"primary-text"}
+                  component={"div"}
+                  variant={"subtitle1"}
+                  fontWeight={800}
+                  color={"inherit"}
+                >
+                  DIFFERENTIATE
+                </Typography>
+                <Typography
+                  className={"secondary-text"}
+                  component={"h5"}
+                  variant={"caption"}
+                >
+                  Your Online
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+          <Box className={"brief-about-text"} sx={{ width: "100%" }}>
+            <Typography
+              component={"div"}
+              variant={"subtitle2"}
+              textAlign={"center"}
+              fontWeight={600}
+              position={"relative"}
+              zIndex={100}
+            >
+              We believe in building partnerships, not acquiring clients. Above
+              all, everything we do comes from the perspective of a business
+              owner, and we treat your business like our own. We’re transparent
+              about our methods, our pricing, and our deliverables. The best
+              part? You get the peace of mind that we will bend over backwards
+              to do whatever it takes to grow your business.
+            </Typography>
+          </Box>
+        </Box>
+        <Box className="section-method" sx={{ mt: 10 }}>
+          <Typography
+            component={"h1"}
+            variant={"h5"}
+            fontWeight={800}
+            textAlign={"center"}
+          >
+            We also drive result through
+          </Typography>
+          <Stack
+            flexWrap={"wrap"}
+            direction={"row"}
+            gap={3}
+            sx={{ mx: "auto", my: 6 }}
+            justifyContent={"center"}
+          >
+            {drive.map((d, index) => {
+              let c = d.label.replace(" ", "-").toLowerCase();
+              return (
+                <Box
+                  className={"card " + c}
+                  key={index}
+                  sx={{
+                    borderColor: `${theme.palette.primary.main}!important`,
+                  }}
+                >
+                  <Icon
+                    icon={d.name}
+                    color={theme.palette.primary.main}
+                    height="30"
+                    className={"icon"}
+                  />
+                  <Typography
+                    component={"div"}
+                    variant={"caption"}
+                    color={"primary"}
+                    fontWeight={500}
+                  >
+                    {d.label}
+                  </Typography>
+                </Box>
+              );
+            })}
+          </Stack>
+        </Box>
+        <TopServices />
+        <Box className={"section-team"}>
+          <Box className={"section-header"} sx={{ textAlign: "center" }}>
+            <Typography
+              component={"div"}
+              variant={"caption"}
+              color={"secondary"}
+              fontWeight={500}
+            >
+              The Best Team
+            </Typography>
+            <Typography
+              component={"div"}
+              variant={"h4"}
+              color={"text.primary"}
+              fontWeight={800}
+            >
+              Meet Our Professional Team
+            </Typography>
+          </Box>
+          <Box className={"team"}>
+            <Swiper
+              initialSlide={2}
+              centeredSlides={true}
+              slidesPerView={3}
+              spaceBetween={30}
+              pagination={true}
+              breakpoints={{
+                800: {
+                  slidesPerView: 5,
+                },
+              }}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+            >
+              <SwiperButtonNext ref={swiperRef} />
+
+              {Array.from(Array(5)).map((_, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    {({ isActive, isPrev, isNext }) => (
+                      <Box
+                        onClick={() => swiperRef.current?.slide(index)}
+                        className={isActive ? "active team" : "team"}
+                        sx={{
+                          mt: isNext || isPrev ? "1em" : 0,
+                        }}
+                      >
+                        <Box
+                          className={
+                            isActive ? "image-wrap" : "image-wrap not-active"
+                          }
+                          sx={{ boxShadow: theme.shadows[7] }}
+                        >
+                          <img
+                            src={"/images/user.jpg"}
+                            alt={"team-user"}
+                            className={
+                              isActive ? "staff-image active" : "staff-image"
+                            }
+                          />
+                        </Box>
+                        <Box
+                          className={"staff-detail"}
+                          sx={{
+                            textAlign: "center",
+                            opacity: isActive ? 1 : 0,
+                            transition: `all .20s ${theme.transitions.easing.easeInOut}`,
+                          }}
+                        >
+                          <Typography
+                            component={"div"}
+                            variant={"h6"}
+                            fontWeight={600}
+                          >
+                            Darey Olushina
+                          </Typography>
+                          <Typography
+                            component={"div"}
+                            variant={"subtitle2"}
+                            color={"secondary"}
+                            fontWeight={600}
+                          >
+                            Executive Officer
+                          </Typography>
+                        </Box>
+                        <Box
+                          className={"icon-wrap"}
+                          sx={{
+                            mt: 1,
+                            opacity: isActive ? 1 : 0,
+                            transition: `all .20s ${theme.transitions.easing.easeInOut}`,
+                          }}
+                        >
+                          <Stack direction={"row"} spacing={0.1}>
+                            <IconButton size={"small"}>
+                              <Icon
+                                icon="akar-icons:instagram-fill"
+                                color="#545454"
+                                height="15"
+                              />
+                            </IconButton>
+                            <IconButton size={"small"}>
+                              <Icon
+                                icon="akar-icons:facebook-fill"
+                                color="#545454"
+                                height="15"
+                              />
+                            </IconButton>
+                            <IconButton size={"small"}>
+                              <Icon
+                                icon="akar-icons:twitter-fill"
+                                color="#545454"
+                                height="15"
+                              />
+                            </IconButton>
+                            <IconButton size={"small"}>
+                              <Icon
+                                icon="foundation:social-linkedin"
+                                color="#545454"
+                                height="15"
+                              />
+                            </IconButton>
+                          </Stack>
+                        </Box>
+                      </Box>
+                    )}
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </Box>
+        </Box>
+        <Box className={"section-testimonial"} sx={{ mt: 10 }}>
+          <Box className={"section-header"} sx={{ textAlign: "center" }}>
+            <Typography
+              component={"div"}
+              variant={"caption"}
+              color={"secondary"}
+              fontWeight={500}
+            >
+              How we make our clients proud of us
+            </Typography>
+            <Typography
+              component={"div"}
+              variant={"h4"}
+              color={"text.primary"}
+              fontWeight={800}
+            >
+              Testimonials From Our Clients
+            </Typography>
+          </Box>
+          <Box className={"testimonial"} sx={{ my: 5 }}>
+            <Swiper
+              initialSlide={2}
+              centeredSlides={true}
+              slidesPerView={1}
+              spaceBetween={20}
+              loop={true}
+              breakpoints={{
+                1000: {
+                  slidesPerView: 3,
+                },
+                800: {
+                  slidesPerView: 2,
+                },
+              }}
+              pagination={true}
+              modules={[Pagination, Navigation]}
+              className="mySwiper"
+              style={{ padding: "1em", minHeight: 350 }}
+            >
+              {Array.from(Array(5)).map((_, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    {({ isActive, isPrev, isNext }) => (
+                      <Card
+                        elevation={5}
+                        className={
+                          isActive ? "active testimonial" : "testimonial"
                         }
-
-                    </Stack>
-                </Box>
-                <TopServices />
-                <Box className={"section-team"}>
-                    <Box className={"section-header"} sx={{textAlign: "center"}}>
-                        <Typography component={"div"} variant={"caption"} color={"secondary"} fontWeight={500}>
-                            The Best Team
-                        </Typography>
-                        <Typography component={"div"} variant={"h4"} color={"text.primary"} fontWeight={800}>
-                            Meet Our Professional Team
-                        </Typography>
-                    </Box>
-                    <Box className={"team"}>
-                        <Swiper
-                            initialSlide={2}
-                            centeredSlides={true}
-                            slidesPerView={3}
-                            spaceBetween={30}
-                            pagination={true}
-                            breakpoints={{
-                                800: {
-                                    slidesPerView: 5
-                                },
-                            }}
-                            modules={[Pagination, Navigation]}
-                            className="mySwiper"
+                        sx={{
+                          mt: isNext || isPrev ? "1em" : 0,
+                        }}
+                      >
+                        <CardHeader
+                          avatar={
+                            <Avatar
+                              src={"/images/user.jpg"}
+                              aria-label="testifier image"
+                            />
+                          }
+                          title={
+                            <Typography
+                              variant={"subtitle1"}
+                              fontWeight={600}
+                              lineHeight={1}
+                            >
+                              Cynthia Adesoro
+                            </Typography>
+                          }
+                          subheader={
+                            <Typography variant={"caption"} color={"secondary"}>
+                              Global Fashions Company
+                            </Typography>
+                          }
+                        />
+                        <CardContent
+                          className={"description text"}
+                          sx={{ pt: 0 }}
                         >
-                            <SwiperButtonNext ref={swiperRef} />
-
-                            {Array.from(Array(5)).map((_,index)=>{
-                                return (
-                                    <SwiperSlide key={index}>
-                                        {({ isActive , isPrev, isNext}) => (
-                                            <Box onClick={()=> swiperRef.current?.slide(index)} className={isActive ? "active team" : "team"} sx={{
-                                                mt: (isNext || isPrev) ? "1em" : 0
-                                            }}>
-                                                <Box className={isActive ? "image-wrap" : "image-wrap not-active"} sx={{boxShadow: theme.shadows[7]}}>
-                                                    <img src={"/images/user.jpg"} alt={"team-user"}
-                                                         className={isActive ? "staff-image active" : "staff-image"}
-                                                    />
-                                                </Box>
-                                                <Box className={"staff-detail"}
-                                                     sx={{textAlign: "center", opacity: isActive ? 1 : 0,
-                                                         transition: `all .20s ${theme.transitions.easing.easeInOut}`}}>
-                                                    <Typography component={"div"}
-                                                                variant={"h6"}
-                                                                fontWeight={600}
-                                                    >
-                                                        Darey Olushina
-                                                    </Typography>
-                                                    <Typography component={"div"} variant={"subtitle2"}
-                                                                color={"secondary"} fontWeight={600}>
-                                                        Executive Officer
-                                                    </Typography>
-                                                </Box>
-                                                <Box className={"icon-wrap"}
-                                                     sx={{mt: 1, opacity: isActive ? 1 : 0, transition: `all .20s ${theme.transitions.easing.easeInOut}`  }}>
-                                                    <Stack direction={"row"} spacing={0.1}>
-                                                        <IconButton size={"small"}>
-                                                            <Icon icon="akar-icons:instagram-fill" color="#545454" height="15" />
-                                                        </IconButton>
-                                                        <IconButton size={"small"}>
-                                                            <Icon icon="akar-icons:facebook-fill" color="#545454" height="15" />
-                                                        </IconButton>
-                                                        <IconButton size={"small"}>
-                                                            <Icon icon="akar-icons:twitter-fill" color="#545454" height="15" />
-                                                        </IconButton>
-                                                        <IconButton size={"small"}>
-                                                            <Icon icon="foundation:social-linkedin" color="#545454" height="15" />
-                                                        </IconButton>
-
-                                                    </Stack>
-                                                </Box>
-                                            </Box>
-                                        )}
-                                    </SwiperSlide>
-                                )
-                            })}
-                        </Swiper>
-                    </Box>
-                </Box>
-                <Box className={"section-testimonial"} sx={{mt: 10}}>
-                    <Box className={"section-header"} sx={{textAlign: "center"}}>
-                        <Typography component={"div"} variant={"caption"} color={"secondary"} fontWeight={500}>
-                            How we make our clients proud of us
-                        </Typography>
-                        <Typography component={"div"} variant={"h4"} color={"text.primary"} fontWeight={800}>
-                            Testimonials From Our Clients
-                        </Typography>
-                    </Box>
-                    <Box className={"testimonial"} sx={{my: 5}}>
-                        <Swiper
-                            initialSlide={2}
-                            centeredSlides={true}
-                            slidesPerView={1}
-                            spaceBetween={20}
-                            loop={true}
-                            breakpoints={{
-                                1000: {
-                                    slidesPerView: 3
-                                },
-                                800: {
-                                    slidesPerView: 2
-                                },
-                            }}
-                            pagination={true}
-                            modules={[Pagination, Navigation]}
-                            className="mySwiper"
-                            style={{padding: "1em", minHeight: 350}}
-                        >
-                            {Array.from(Array(5)).map((_,index)=>{
-                                return (
-                                    <SwiperSlide key={index}>
-                                        {({ isActive , isPrev, isNext}) => (
-                                            <Card elevation={5} className={isActive ? "active testimonial" : "testimonial"} sx={{
-                                                mt: (isNext || isPrev) ? "1em" : 0,
-                                            }} >
-                                                <CardHeader
-                                                    avatar={
-                                                        <Avatar src={"/images/user.jpg"}  aria-label="testifier image" />
-                                                    }
-                                                    title={<Typography variant={"subtitle1"} fontWeight={600} lineHeight={1}>Cynthia Adesoro</Typography>}
-                                                    subheader={<Typography variant={"caption"} color={"secondary"}>Global Fashions Company</Typography>}
-                                                />
-                                                <CardContent className={"description text"} sx={{pt: 0}}>
-                                                    <Typography component={"h6"} variant={"subtitle2"} fontWeight={600}>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, architecto
-                                                        assumenda consectetur cupiditate dicta dolores earum excepturi illo illum itaque
-                                                        laboriosam nesciunt optio, quia quos repudiandae sit sunt temporibus ullam?
-                                                    </Typography>
-                                                </CardContent>
-                                            </Card>
-                                        )}
-                                    </SwiperSlide>
-                                )
-                            })}
-                        </Swiper>
-                    </Box>
-                </Box>
-                <Hub />
-                <GetStarted />
-            </div>
-        </div>
-    )
-}
+                          <Typography
+                            component={"h6"}
+                            variant={"subtitle2"}
+                            fontWeight={600}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Alias, architecto assumenda consectetur
+                            cupiditate dicta dolores earum excepturi illo illum
+                            itaque laboriosam nesciunt optio, quia quos
+                            repudiandae sit sunt temporibus ullam?
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    )}
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </Box>
+        </Box>
+        <Hub />
+        <GetStarted />
+      </div>
+    </Container>
+  );
+};
 
 export default Index;

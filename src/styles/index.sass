@@ -169,8 +169,8 @@ html
         padding: 2em
         height: initial
         max-width: 100%
-        border-radius: 0
-        clip-path: polygon(5% 4%, 100% 0%, 95% 95%, 0% 100%)
+        border-radius: 10px
+        // clip-path: polygon(5% 4%, 100% 0%, 95% 95%, 0% 100%)
 
       .service
         width: 30%
@@ -253,7 +253,7 @@ html
     .client
       position: absolute
       @for $i from 1 through 20
-        &:nth-child(#{$i})
+        &:nth-child(#{$i})g
           @if ($i <= 5)
             top: 10%
             left: #{$i * 60}px

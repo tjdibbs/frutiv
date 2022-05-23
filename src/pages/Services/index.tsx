@@ -88,7 +88,7 @@ const Services = (): JSX.Element => {
             return (
               <Card
                 key={index}
-                elevation={10}
+                elevation={7}
                 sx={{ height: "100%", display: "grid", placeItems: "center" }}
                 className={"section-card service"}
               >
