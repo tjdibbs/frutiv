@@ -12,11 +12,11 @@ import {
     useTheme
 } from "@mui/material";
 import {Icon} from "@iconify/react";
-import links, {icons} from "../lib/links"
+import links, {icons} from "./links"
 import {NavLink} from "react-router-dom";
 
 
-const Header: React.FC = ()=>{
+const Index: React.FC = ()=>{
     const theme = useTheme();
     const [open, setOpen] = React.useState<boolean>(false);
 
@@ -53,14 +53,14 @@ const Header: React.FC = ()=>{
                     <Icon icon="heroicons-solid:menu-alt-3" color="#545454" height="24" />
                 </IconButton>
             </Toolbar>
-            <Toolbar className={"bottom-header"} sx={{justifyContent: "space-between", flexWrap: "nowrap", width: "100%",overflowX: "auto", bgcolor: theme.palette.primary.light, minHeight: "50px!important"}}>
+            <Toolbar className={"bottom-header"} sx={{justifyContent: "center", columnGap: 3, flexWrap: "nowrap", width: "100%",overflowX: "auto", bgcolor: theme.palette.primary.light, minHeight: "50px!important"}}>
                 {
                     links.map((link, index)=>{
                         let url = "/"+link.replace(" ","-").toLocaleLowerCase()
                         const applyStyle = ({isActive}: {isActive: boolean}) => isActive ? "link active" : "link"
 
                         return(
-                            <NavLink to={url} key={index} className={applyStyle} style={{minWidth: "max-content"}}>
+                            <NavLink to={link === "Home" ? "/" : url} key={index} className={applyStyle} style={{minWidth: "max-content"}}>
                                 {link}
                             </NavLink>
                         )
@@ -120,4 +120,4 @@ const Header: React.FC = ()=>{
     )
 }
 
-export default Header;
+export default Index;

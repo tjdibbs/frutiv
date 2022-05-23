@@ -12,6 +12,8 @@ import {Icon} from "@iconify/react";
 import {drive,} from "./data"
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import TopServices from "../../components/topServices";
+import Hub from "../../components/hub";
+import GetStarted from "../../components/get-started";
 
 // Import Swiper styles
 import "swiper/css";
@@ -41,7 +43,7 @@ const Index: React.FC<Props> = (props): JSX.Element => {
                <Box className={"section-front"}>
                    <Box>
                        <Typography className={"big-text"} mx={"auto"} mt={8} component={"h3"} variant={"h3"} fontWeight={800} maxWidth={800} textAlign={"center"}>
-                           Let’s get that audience You want, like a flowing river
+                           Let’s get that audience You want, like a flowing stream
                        </Typography>
                    </Box>
                    <Box sx={{my: 3}}>
@@ -238,84 +240,8 @@ const Index: React.FC<Props> = (props): JSX.Element => {
                         </Swiper>
                     </Box>
                 </Box>
-                <Box className={"section-hub"} sx={{my: 10, display: "flex", flexWrap: "nowrap"}} >
-                    <Box className={"section-wrapper"} sx={{width: "70%"}}>
-                        <Box className={"section-header"} >
-                            <Typography component={"h1"} variant={"h4"} fontWeight={800} color={"secondary"}>
-                                FRUTIV HUB
-                            </Typography>
-                            <Typography component={"h1"} variant={"subtitle1"} fontWeight={500}>
-                                Getting to know about the frutiv hub.
-                            </Typography>
-                        </Box>
-                        <Box className={"section-text"} sx={{my: 5}}>
-                            <Typography component={"p"} variant={"subtitle1"} fontWeight={500}>
-                                We are growing a hub in nigeria,
-                                we also have the goal to give tech
-                                minded youth the knowledge of latest technology at
-                                a very minimum fee, well this fee do not really define
-                                the remuneration of the knowledge and training we will
-                                be giving, it just to enhance support the training
-                                with some tools. One of our goal is to give tech
-                                minded youths, the knowledge of latest technology
-                                and be able to get job easily.
-
-                                During the training, we will also be working
-                                as a team building small technology, giving our trainee live
-                            </Typography>
-                        </Box>
-                        <Button variant={"contained"} color={"secondary"} sx={{borderRadius: 10, mt: 2,textTransform: "none",py: 2, px: 5, boxShadow: theme.shadows[4]}} size={"large"}> Learn more </Button>
-                    </Box>
-                    <Box className={"image-container"} sx={{right: 0, maxWidth: "40%", width: "max-content"}}>
-                        <img src={"/images/hub.png"} alt={"hub"} style={{width: "450px", maxWidth: "100%"}} />
-                    </Box>
-                </Box>
-                <Box className={"get-started-section"} sx={
-                    {
-                        px: 2,
-                        py: 3,
-                        bgcolor: theme.palette.primary.main,
-                        borderRadius: 1,
-                        boxShadow: theme.shadows[10],
-                        textAlign:"center",
-                        mt: 30,
-                        mb: 10
-                    }
-                }>
-                    <Box className={"section-header"} sx={{mx: "auto",mb: 3, maxWidth: 500}}>
-                        <Typography component={"h2"} variant={"h5"} fontWeight={800} color={"#fff"}>
-                            Want How Service
-                        </Typography>
-                        <Typography component={"h2"} variant={"subtitle2"} fontWeight={400} color={"#fff"}>
-                            Provide your email below or chat directly with us with the chat talk at the bottom-right of the page, to get our solutions and services now
-                        </Typography>
-                    </Box>
-                    <Box className={"form-group"} sx={{mb: 2}}>
-                        <TextField
-                            label={"Enter your email"}
-                            fullWidth
-                            variant={"filled"}
-                            sx={{
-                                ".MuiFilledInput-root":{
-                                    bgcolor: "#fff",
-                                    borderRadius: 3,
-                                    "&::before, &::after": {
-                                        display: "none!important"
-                                    }},
-                                width: 350,
-                                maxWidth: "90%",
-                                mx: "auto",
-                                ".MuiFilledInput-input":{fontWeight: "600!important", textAlign: "center",
-                                    borderRadius: 3, bgcolor: "#fff"},
-                                ".MuiInputLabel-root":{fontWeight: "600!important",width: "100%",
-                                    "&.Mui-focused":{left: "50%",transform: "translate(-40%, 7px) scale(0.75)"
-                                }
-                                }
-                        }}
-                        />
-                    </Box>
-                    <Button color={"secondary"} size={"large"} variant={"contained"} sx={{minWidth: 150, bgcolor: "#F0AF08", borderRadius: 5}}>Submit</Button>
-                </Box>
+                <Hub />
+                <GetStarted />
             </div>
         </div>
     )
