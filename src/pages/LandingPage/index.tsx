@@ -2,14 +2,12 @@ import React from "react";
 import {
   Avatar,
   Box,
-  Button,
   Card,
   CardContent,
   CardHeader,
   Container,
   IconButton,
   Stack,
-  TextField,
   Typography,
   useTheme,
 } from "@mui/material";
@@ -59,7 +57,7 @@ const Index: React.FC<Props> = (props): JSX.Element => {
               maxWidth={800}
               textAlign={"center"}
             >
-              Let’s get that audience You want, like a flowing stream
+              Let us get that audience You want, like a flowing stream
             </Typography>
           </Box>
           <Box sx={{ my: 3 }}>

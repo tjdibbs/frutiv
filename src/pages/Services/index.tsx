@@ -55,11 +55,11 @@ const Services = (): JSX.Element => {
                 </Typography>
               </Breadcrumbs>
             </Box>
-            <Box sx={{ my: 3 }} className="brief-text">
+            <Box className="brief-text">
               <Typography
                 component={"h3"}
                 fontWeight={600}
-                variant={"subtitle1"}
+                variant={"subtitle2"}
                 px={1}
               >
                 We provide digital quality services, we help you reach your

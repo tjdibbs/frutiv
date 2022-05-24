@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import GetStarted from "../../components/get-started";
 
 const websites = [
   {
@@ -72,11 +73,11 @@ function Portfolio() {
                 </Typography>
               </Breadcrumbs>
             </Box>
-            <Box sx={{ my: 3 }} className="brief-text">
+            <Box className="brief-text">
               <Typography
                 component={"h3"}
                 fontWeight={600}
-                variant={"subtitle1"}
+                variant={"subtitle2"}
                 px={1}
               >
                 We provide digital quality services, we help you reach your
@@ -93,14 +94,21 @@ function Portfolio() {
       <Box className="section-web-services">
         <Typography
           component={"h6"}
-          variant="subtitle1"
+          variant="subtitle2"
           textAlign="center"
           color="secondary"
+          px={2}
         >
           Take a look at some of the ongoing and completed website and web app
           by frutiv technology
         </Typography>
-        <Typography component={"h1"} variant={"h4"} mb={8} fontWeight={800}>
+        <Typography
+          component={"h1"}
+          px={2}
+          variant={"h4"}
+          mb={8}
+          fontWeight={800}
+        >
           Our Recents Web Job
         </Typography>
         <Box className="website-list">
@@ -304,6 +312,9 @@ function Portfolio() {
           })}
         </Box>
       </Box>
+      <Container>
+        <GetStarted />
+      </Container>
     </Box>
   );
 }

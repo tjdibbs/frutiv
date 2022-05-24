@@ -3,16 +3,24 @@
 $transition: all .30s ease-in-out
 $cream: rgba(188, 191, 22, .19)
 $orange:rgba(240, 175, 8, .29)
+$primary: #9C9130
+$secondary: #F06908
+$info: #F0AF08
+
 
 
 html
   max-width: 100vw
   overflow-x: hidden
 .page-header
+  background: #fff!important
+  box-shadow: 0 4px 10px $cream!important
+  .bottom-header
+    background: $cream
   .link
     padding: 13px
     text-decoration: none
-    color: #ffffff
+    color: $primary
     font-weight: 600
     &:hover,&.active
       background: #fff
@@ -113,13 +121,16 @@ html
     border-radius: 10px
     margin-top: -3em
     position: relative
-    box-shadow: 0 0 20px rgba(156, 145, 48, 23%)
+    
     
     @include media_600
       padding-inline: 1.5em
+      border-radius: 0
 
   .brief-text
     padding-inline: 1em !important
+    box-shadow: 0 0 20px rgba(156, 145, 48, 23%)  
+    border-radius: 10px
 
   .section-method
     .card
@@ -166,7 +177,7 @@ html
 
       .section-card
         width: 350px
-        padding: 2em
+        padding: 2em 1em
         height: initial
         max-width: 100%
         border-radius: 10px
@@ -177,6 +188,7 @@ html
         min-width: 320px
         flex-grow: 1
 
+  // Hub Stylesheet
   .section-team
     .swiper
       width: 100%
@@ -224,6 +236,8 @@ html
     .swiper-slide
       min-width: 300px
 
+
+  // Portfolio stylesheet 
   .section-web-services
     background: $cream
     text-align: center
@@ -240,30 +254,53 @@ html
       position: relative
       z-index: 10
       .website-cover
-        height: 400px
+        width: 600px
         max-width: 100vw
         border-radius: 20px
       .content
         width: 400px
         max-width: 90%
         margin: auto
-
   .clients-wrapper
     position: relative
+    display: flex
+    max-width: 700px
+    margin: auto
+    gap: 2em
+    flex-wrap: wrap
+
     .client
-      position: absolute
-      @for $i from 1 through 20
-        &:nth-child(#{$i})g
-          @if ($i <= 5)
-            top: 10%
-            left: #{$i * 60}px
-          @else 
-            @if ($i > 5 & $i < 10)
-              top: #{$i * 60}px
-              left: 0
+      display: grid
+      place-items: center
+      place-content: center
 
-
-
+      &:nth-child(1)
+        top: 50px
+        left: 10px
+      &:nth-child(2)
+        top: 100px
+        left:100px
+      &:nth-child(3)
+        top: 80%
+        left: 20%
+      &:nth-child(4)
+        top: 200px
+        left: 40px
+      &:nth-child(5)
+        top: 110px
+        left: 150px
+      &:nth-child(6)
+        top: 80px
+        left: 170px
+      &:nth-child(7)
+        top: 90px
+        left: 250px
+      &:nth-child(8)
+        top: 65px
+        left: 125px
+      &:nth-child(9)
+        top: 160px
+        left: 145px
   .mobile-applications
     display: flex
     flex-wrap: wrap
@@ -374,6 +411,154 @@ html
   .section-testimonies
     background-color: $cream
     padding: 4em 2em
+
+
+  // About us Stylesheet
+  .section-choose-us
+    display: flex
+    align-items: center
+    margin-bottom: 5em
+    flex-wrap: nowrap
+
+    @include media_800 
+      flex-wrap: wrap-reverse
+      justify-content: center
+
+    .section-content
+      width: 500px
+      padding-right: 1em
+      max-width: 100%
+
+      @include media_800 
+        width: max-content
+      .step
+        display: flex
+        align-items: center
+        gap: 2em
+        position: relative
+
+        @include media_400 
+          h3
+            font-size: 1em
+        &:not(:last-child)
+            margin-bottom: 1.5em
+            .step-index
+              &::before
+                position: absolute
+                content: ""
+                height: 1.5em
+                width: 5px
+                left: 50%
+                transform: translateX(-50%)
+                top: 100%
+                border-radius: 50px
+                background: $secondary
+        &.one
+          .step-index::before
+            background: $info!important
+                
+            
+        .step-index
+          border: 7px solid
+          display: grid
+          place-items: center
+          border-radius: 50%
+          font-weight: 800
+          min-width: 60px
+          min-height: 60px
+          font-size: 1.5em
+          position: relative
+    .section-media
+      width: 50%
+      flex-grow: 1
+      img
+        width: 100%
+  .section-what-we-do
+    background: $cream
+    padding: 2em
+    .services
+      display: grid
+      gap: 1.5em
+      place-content: center
+      place-items: center
+      grid-template-columns: repeat(auto-fit, minmax(200px, 250px))
+
+      .service-keyword
+        height: 150px
+        padding: 3em
+        display: grid
+        place-items: center
+        text-align: center
+        color: #fff
+        margin-block: 1em
+
+      .service-description
+        text-align: center
+        font-weight: 500
+  .section-development
+    margin-block: 10em
+    .languages
+      display: flex
+      gap: 2em
+      flex-wrap: wrap
+      div
+        border: 1px solid $primary
+        box-shadow: 0 0 20px $cream
+        padding: 1em
+        border-radius: 10px
+        display: grid
+        flex-grow: 1
+        place-items: center
+        width: max-content
+      img
+        max-width: 150px
+      
+      @include media_600
+          gap: 1em
+          img
+            max-width: 100px
+  
+  // Contact us styleesheet
+  .contact-us-wrapper
+    .section-main
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+
+      @include media_800
+        justify-content: space-around
+
+      .info-wrapper
+        width: 350px
+        max-width: 90%
+        .info-list          
+          &::before
+            position: absolute
+            left: 0
+            width: 3px
+            background-color: $secondary
+            content: ""
+            height: 100%
+            top: 0
+            border-radius: 50px
+
+
+  // get-started-section
+  .get-started-section
+    position: relative
+    overflow: hidden
+    &::before,&::after
+      content: ""
+      position: absolute
+      width: 500px
+      height: 500px
+      border-radius: 50%
+      right: -250px
+      top: -50%
+      background: rgba(255,255,255 ,.1)
+    &::after
+      left: -200px
+      top: 30%
 @include media_600
   .bottom-header,.phone-icon,.social-icons-container
     display: none!important
