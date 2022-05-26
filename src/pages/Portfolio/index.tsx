@@ -12,6 +12,7 @@ import {
 import React from "react";
 import { NavLink } from "react-router-dom";
 import GetStarted from "../../components/get-started";
+import j from "jquery";
 
 const websites = [
   {
@@ -36,6 +37,45 @@ const websites = [
 
 function Portfolio() {
   const theme = useTheme();
+  const webRef = React.useRef<HTMLDivElement>(null);
+  // React.useEffect(() => {
+  //   const element = webRef.current as HTMLDivElement;
+  //   let timerStore: NodeJS.Timer;
+
+  //   function Animate() {
+  //     let ended = true;
+  //     timerStore = setInterval(() => {
+  //       const w = j(element).prop("scrollWidth");
+  //       const innerWidth = window.innerWidth;
+  //       let left = j(element).prop("scrollLeft");
+
+  //       if (w - innerWidth + 15 <= left || ended) {
+  //         if (left <= 4 && left !== 0 && left !== 1) {
+  //           setTimeout(() => {
+  //             j(element).prop("scrollLeft", left - 2);
+  //             ended = true;
+  //           }, 1000);
+  //         } else {
+  //           j(element).prop("scrollLeft", left - 2);
+  //           ended = true;
+  //         }
+  //       }
+
+  //       if (!ended) {
+  //         j(element).prop("scrollLeft", left + 2);
+  //       }
+
+  //       if (left <= 2) ended = false;
+  //     }, 50);
+  //   }
+
+  //   Animate();
+
+  //   return () => {
+  //     clearInterval(timerStore);
+  //   };
+  // });
+
   return (
     <Box className="portfolio-wrapper">
       <Container className={"section-front"}>
@@ -92,70 +132,74 @@ function Portfolio() {
         </Box>
       </Container>
       <Box className="section-web-services">
-        <Typography
-          component={"h6"}
-          variant="subtitle2"
-          textAlign="center"
-          color="secondary"
-          px={2}
-        >
-          Take a look at some of the ongoing and completed website and web app
-          by frutiv technology
-        </Typography>
-        <Typography
-          component={"h1"}
-          px={2}
-          variant={"h4"}
-          mb={8}
-          fontWeight={800}
-        >
-          Our Recents Web Job
-        </Typography>
-        <Box className="website-list">
-          {websites.map((website, index) => {
-            return (
-              <Box className="website zablot" key={index}>
-                <Box className="image-wrapper">
-                  <img
-                    src={website.image}
-                    className="website-cover"
-                    alt="zablot website"
-                    style={{ boxShadow: theme.shadows[10] }}
-                  />
-                </Box>
-                <Box className="details content">
-                  <Typography
-                    component={"h3"}
-                    variant="h6"
-                    my={3}
-                    fontWeight={800}
-                    color="secondaru"
-                    textAlign="center"
-                  >
-                    {website.name}
-                  </Typography>
-                  <Typography
-                    component={"h3"}
-                    variant="subtitle2"
-                    mb={3}
-                    textAlign="center"
-                  >
-                    {website.text}
-                  </Typography>
-                  <a href={website.url} style={{ textDecoration: "none" }}>
-                    <Button
-                      variant="outlined"
-                      sx={{ textTransform: "none", borderRadius: 5 }}
-                      size="large"
-                      color="secondary"
+        <Box className="section-header">
+          <Typography
+            component={"h6"}
+            variant="subtitle2"
+            textAlign="center"
+            color="secondary"
+            px={2}
+          >
+            Take a look at some of the ongoing and completed website and web app
+            by frutiv technology
+          </Typography>
+          <Typography
+            component={"h1"}
+            px={2}
+            variant={"h4"}
+            mb={8}
+            fontWeight={800}
+          >
+            Our Recents Web Job
+          </Typography>
+        </Box>
+        <Box className="list-wrapper">
+          <Box className="website-list" ref={webRef}>
+            {websites.map((website, index) => {
+              return (
+                <Box className="website zablot" key={index}>
+                  <Box className="image-wrapper">
+                    <img
+                      src={website.image}
+                      className="website-cover"
+                      alt="zablot website"
+                      style={{ boxShadow: theme.shadows[10] }}
+                    />
+                  </Box>
+                  <Box className="details content">
+                    <Typography
+                      component={"h3"}
+                      variant="h6"
+                      my={3}
+                      fontWeight={800}
+                      color="secondaru"
+                      textAlign="center"
                     >
-                      Visit Website
-                    </Button>
-                  </a>
+                      {website.name}
+                    </Typography>
+                    <Typography
+                      component={"h3"}
+                      variant="subtitle2"
+                      mb={3}
+                      textAlign="center"
+                    >
+                      {website.text}
+                    </Typography>
+                    <a href={website.url} style={{ textDecoration: "none" }}>
+                      <Button
+                        variant="outlined"
+                        sx={{ textTransform: "none", borderRadius: 5 }}
+                        size="large"
+                        color="secondary"
+                      >
+                        Visit Website
+                      </Button>
+                    </a>
+                  </Box>
                 </Box>
-              </Box>
-            );
-          })}
+              );
+            })}
+          </Box>
         </Box>
       </Box>
       <Box className="section-mobile" sx={{ my: 10 }}>
@@ -216,7 +260,7 @@ function Portfolio() {
                       </Typography>
                       <Box
                         className="app description"
-                        style={{ background: "blue", color: "#fff" }}
+                        style={{ color: "#fff" }}
                       >
                         <Typography
                           textAlign="center"
@@ -294,18 +338,15 @@ function Portfolio() {
         </Box>
         <Box className="clients-wrapper" sx={{ maxWidth: 800, m: "auto" }}>
           {Array.from(Array(10)).map((_, index) => {
-            let rand: number = Math.floor(Math.random() * 130) + 10;
-            let n = rand < 30 ? rand + 25 : rand > 100 ? rand - 20 : rand;
-
             return (
               <Box className="client" key={index}>
                 <Avatar
                   alt="Remy Sharp"
                   src="/images/user.jpg"
-                  sx={{ width: n, height: n }}
+                  sx={{ width: 70, height: 70 }}
                 />
                 <Typography variant="subtitle2" fontWeight={600}>
-                  Company Name{" "}
+                  Company Name
                 </Typography>
               </Box>
             );

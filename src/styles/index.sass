@@ -47,33 +47,33 @@ html
     align-items: center
     //row-gap: 1em
     column-gap: 1em
-    .card
-      display: grid
-      border-radius: 5px
-      //padding: 1em
-      min-width: 150px
-      color: #ffffff
-      place-items: center
-      place-content: center
-      width: 150px
+  .card
+    display: grid
+    border-radius: 5px
+    //padding: 1em
+    min-width: 150px
+    color: #ffffff
+    place-items: center
+    place-content: center
+    width: 150px
+    height: 120px
+    z-index: 10
+    .icon
+      margin-bottom: .4em
+    @include media_400
+      width: 120px
       height: 120px
-      z-index: 10
+      min-width: 120px
       .icon
-        margin-bottom: .4em
-      @include media_400
-        width: 120px
-        height: 120px
-        min-width: 120px
-        .icon
-          height: 25px
-          width: 25px
-        .primary-text
-          font-size: 14px
-        &.different .primary-text
-          font-size: 12px
-        .secondary-text
-          font-size: 11px
-    
+        height: 25px
+        width: 25px
+      .primary-text
+        font-size: 14px
+      &.different .primary-text
+        font-size: 12px
+      .secondary-text
+        font-size: 11px
+      
   .front-wrapper
     display: flex
     flex-wrap: wrap
@@ -237,6 +237,12 @@ html
     .swiper-slide
       min-width: 300px
 
+  @keyframes Scroll
+    from 
+      transform: translateX(0px)
+    to
+      transform: translateX(-40vw)
+    
 
   // Portfolio stylesheet 
   .section-web-services
@@ -244,16 +250,36 @@ html
     text-align: center
     padding-block: 3em
     max-width: 100vw
+    height: auto
     overflow: hidden
+    .list-wrapper
+      overflow: auto hidden
+      @media (min-width: 550px)
+        &::-webkit-scrollbar
+          background: #fff
+          height: 10px
+        &::-webkit-scrollbar-thumb
+          background:  $primary
+          border-radius: 50px
     .website-list
       display: flex
-      width: 100%
+      width: max-content
       overflow: auto
       gap: 2em
       padding: 2em
       flex-wrap: nowrap
       position: relative
       z-index: 10
+      scroll-behavior: auto
+      animation: Scroll 20s 1s ease-in-out infinite alternate-reverse
+      @media (min-width: 550px)
+        animation-duration: 30s
+        &::-webkit-scrollbar
+          background: #fff
+          height: 10px
+        &::-webkit-scrollbar-thumb
+          background:  $primary
+          border-radius: 50px
       .website-cover
         width: 600px
         max-width: 100vw
@@ -262,46 +288,6 @@ html
         width: 400px
         max-width: 90%
         margin: auto
-  .clients-wrapper
-    position: relative
-    display: flex
-    max-width: 700px
-    margin: auto
-    gap: 2em
-    flex-wrap: wrap
-
-    .client
-      display: grid
-      place-items: center
-      place-content: center
-
-      &:nth-child(1)
-        top: 50px
-        left: 10px
-      &:nth-child(2)
-        top: 100px
-        left:100px
-      &:nth-child(3)
-        top: 80%
-        left: 20%
-      &:nth-child(4)
-        top: 200px
-        left: 40px
-      &:nth-child(5)
-        top: 110px
-        left: 150px
-      &:nth-child(6)
-        top: 80px
-        left: 170px
-      &:nth-child(7)
-        top: 90px
-        left: 250px
-      &:nth-child(8)
-        top: 65px
-        left: 125px
-      &:nth-child(9)
-        top: 160px
-        left: 145px
   .mobile-applications
     display: flex
     flex-wrap: wrap
@@ -393,6 +379,7 @@ html
               max-width: 90%
               border-radius: 10px
               padding: 1.5em 1em
+              background-color: $secondary
             .get-app-links
               .link
                 display: flex
@@ -412,6 +399,21 @@ html
   .section-testimonies
     background-color: $cream
     padding: 4em 2em
+    .clients-wrapper
+      position: relative
+      display: flex
+      max-width: 700px
+      margin: auto
+      gap: 2em
+      flex-wrap: wrap
+      justify-content: space-between
+      .client
+        display: grid
+        place-items: center
+        background: #fff
+        border-radius: 10px
+        padding: 1em
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20%)
 
 
   // About us Stylesheet

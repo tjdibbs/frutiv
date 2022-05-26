@@ -173,7 +173,7 @@ function ContactUs() {
               color="secondary"
               className="info-title"
             >
-              Get A Quota
+              Get A Quote
             </Typography>
             <Typography
               variant="caption"
@@ -238,7 +238,7 @@ function ContactUs() {
             </Grid>
             <Box className="form-action" sx={{ mt: 3 }}>
               <Button variant="outlined" color="secondary" size="large">
-                Get Quota
+                Get A Quote
               </Button>
             </Box>
           </Box>

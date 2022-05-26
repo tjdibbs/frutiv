@@ -13,6 +13,7 @@ import {
   Toolbar,
   useTheme,
   Container,
+  Typography,
 } from "@mui/material";
 import { Icon } from "@iconify/react";
 import links, { icons } from "./links";
@@ -28,19 +29,38 @@ const Index: React.FC = () => {
 
   return (
     <AppBar position={"sticky"} color={"transparent"} className={"page-header"}>
-      <Container maxWidth="xl" sx={{ p: 0 }}>
+      <Container
+        maxWidth="xl"
+        sx={{
+          p: 0,
+          [theme.breakpoints.down(500)]: {
+            px: 0.5,
+            py: 1,
+          },
+        }}
+      >
         <Toolbar
           className={"top-header"}
           sx={{ alignItems: "center", justifyContent: "space-between" }}
         >
-          <NavLink to={"/"}>
+          <NavLink to={"/"} style={{ textDecoration: "none" }}>
             <Box className={"logo-container"} sx={{ px: 1 }}>
-              <img
-                height={40}
-                width={40}
-                src={"/images/frutiv-logo1.png"}
-                alt="Frutiv logo"
-              />
+              <Stack direction="row" spacing={2} alignItems="center">
+                <img
+                  height={40}
+                  width={40}
+                  src={"/images/frutiv-logo1.png"}
+                  alt="Frutiv logo"
+                />
+                <Typography
+                  component={"h1"}
+                  fontWeight={800}
+                  variant="h6"
+                  color="secondary"
+                >
+                  Frutiv Tech
+                </Typography>
+              </Stack>
             </Box>
           </NavLink>
           <Box sx={{ display: "grid" }} className={"social-icons-container"}>

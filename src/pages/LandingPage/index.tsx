@@ -23,7 +23,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper";
 
 interface Props {}
 
@@ -113,7 +113,12 @@ const Index: React.FC<Props> = (props): JSX.Element => {
             </Box>
           </Box>
         </Container>
-        <Box className="section-breif">
+        <Container
+          sx={{
+            [theme.breakpoints.down(450)]: { maxWidth: "100vw", m: 0, p: 0 },
+          }}
+          className="section-breif"
+        >
           <Three small />
           <Box className={"brief-about-text"} sx={{ width: "100%" }}>
             <Typography
@@ -139,7 +144,7 @@ const Index: React.FC<Props> = (props): JSX.Element => {
               to do whatever it takes to grow your business.
             </Typography>
           </Box>
-        </Box>
+        </Container>
         <Container>
           <Box className="section-method" sx={{ mt: 10 }}>
             <Typography
@@ -431,6 +436,111 @@ const Index: React.FC<Props> = (props): JSX.Element => {
 
 function Three({ small }: { small?: boolean }) {
   const theme = useTheme();
+  const [width, setWidth] = React.useState(window.innerWidth < 450);
+
+  React.useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 450) {
+        setWidth(false);
+      } else setWidth(true);
+    });
+
+    return () =>
+      window.removeEventListener("resize", () => {
+        if (window.innerWidth > 450) {
+          setWidth(false);
+        } else setWidth(true);
+      });
+  });
+
+  const data = [
+    {
+      icon: "simple-icons:googleoptimize",
+      title: "OPTIMIZE",
+      caption: "Marketing Cost",
+      color: theme.palette.secondary.main,
+    },
+    {
+      icon: "icon-park-outline:increase",
+      title: "INCREASE",
+      caption: "Leads & Sales",
+      color: theme.palette.primary.main,
+    },
+    {
+      icon: "ic:outline-web",
+      title: "DIFFERENTIATE",
+      caption: "Your Brand Online",
+      color: theme.palette.info.main,
+    },
+  ];
+
+  if (width) {
+    return (
+      <Box
+        sx={{
+          my: 3,
+          display: small ? "none" : "block",
+          [theme.breakpoints.down(850)]: {
+            display: small ? "block" : "none",
+            padding: 1,
+          },
+        }}
+      >
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+        >
+          {data.map((d, index) => {
+            return (
+              <SwiperSlide
+                key={index}
+                style={{ display: "grid", placeItems: "center" }}
+              >
+                <Box
+                  className={"card optimize"}
+                  sx={{
+                    bgcolor: d.color,
+                    width: "60%!important",
+                    height: "150px!important",
+                  }}
+                >
+                  <Icon
+                    icon={d.icon}
+                    color="#fff"
+                    height="30"
+                    className={"icon"}
+                  />
+                  <Typography
+                    className={"primary-text"}
+                    component={"div"}
+                    variant={"subtitle1"}
+                    fontWeight={800}
+                    color={"inherit"}
+                  >
+                    {d.title}
+                  </Typography>
+                  <Typography
+                    component={"h1"}
+                    className={"secondary-text"}
+                    variant={"caption"}
+                  >
+                    {d.caption}
+                  </Typography>
+                </Box>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </Box>
+    );
+  }
+
   return (
     <Box
       sx={{
@@ -452,87 +562,33 @@ function Three({ small }: { small?: boolean }) {
           },
         }}
       >
-        <Box
-          className={"card optimize"}
-          sx={{ bgcolor: theme.palette.secondary.main }}
-        >
-          <Icon
-            icon="simple-icons:googleoptimize"
-            color="#fff"
-            height="30"
-            className={"icon"}
-          />
-          <Typography
-            className={"primary-text"}
-            component={"div"}
-            variant={"subtitle1"}
-            fontWeight={800}
-            color={"inherit"}
-          >
-            OPTIMIZE
-          </Typography>
-          <Typography
-            component={"h1"}
-            className={"secondary-text"}
-            variant={"caption"}
-          >
-            Marketing Cost
-          </Typography>
-        </Box>
-        <Box
-          className={"card increase"}
-          sx={{ bgcolor: theme.palette.primary.main }}
-        >
-          <Icon
-            icon="icon-park-outline:increase"
-            color="#fff"
-            height="30"
-            className={"icon"}
-          />
-          <Typography
-            className={"primary-text"}
-            component={"div"}
-            variant={"subtitle1"}
-            fontWeight={800}
-            color={"inherit"}
-          >
-            INCREASE
-          </Typography>
-          <Typography
-            className={"secondary-text"}
-            component={"h5"}
-            variant={"caption"}
-          >
-            Marketing Cost
-          </Typography>
-        </Box>
-        <Box
-          className={"card different"}
-          sx={{ bgcolor: theme.palette.info.main }}
-        >
-          <Icon
-            icon="ic:outline-web"
-            color="#fff"
-            height="30"
-            className={"icon"}
-          />
-          <Typography
-            className={"primary-text"}
-            component={"div"}
-            variant={"subtitle1"}
-            fontWeight={800}
-            color={"inherit"}
-          >
-            DIFFERENTIATE
-          </Typography>
-          <Typography
-            className={"secondary-text"}
-            component={"h5"}
-            variant={"caption"}
-          >
-            Your Online
-          </Typography>
-        </Box>
+        {data.map((d, index) => {
+          return (
+            <Box
+              key={index}
+              className={"card optimize"}
+              sx={{ bgcolor: d.color }}
+            >
+              <Icon icon={d.icon} color="#fff" height="30" className={"icon"} />
+              <Typography
+                className={"primary-text"}
+                component={"div"}
+                variant={"subtitle1"}
+                fontWeight={800}
+                color={"inherit"}
+              >
+                {d.title}
+              </Typography>
+              <Typography
+                component={"h1"}
+                className={"secondary-text"}
+                variant={"caption"}
+              >
+                {d.caption}
+              </Typography>
+            </Box>
+          );
+        })}
       </Box>
     </Box>
   );
