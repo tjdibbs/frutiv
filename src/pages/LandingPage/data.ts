@@ -19,10 +19,6 @@ export const drive = [
     name: "icon-park-outline:seo",
     label: "Search Engine Optimization",
   },
-  {
-    name: "icon-park-outline:seo",
-    label: "Analytics Tools",
-  },
 ];
 
 export const topServices = [

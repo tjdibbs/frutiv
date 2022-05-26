@@ -34,10 +34,11 @@ const Index: React.FC = () => {
           sx={{ alignItems: "center", justifyContent: "space-between" }}
         >
           <NavLink to={"/"}>
-            <Box className={"logo-container"}>
+            <Box className={"logo-container"} sx={{ px: 1 }}>
               <img
-                height={"60px"}
-                src={"/images/frutiv-logo.png"}
+                height={40}
+                width={40}
+                src={"/images/frutiv-logo1.png"}
                 alt="Frutiv logo"
               />
             </Box>
