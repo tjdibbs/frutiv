@@ -19,7 +19,7 @@ export default function GetStarted() {
     >
       <Box
         className={"section-header"}
-        sx={{ mx: "auto", mb: 3, maxWidth: 500, p: 1 }}
+        sx={{ mx: "auto", mb: 3, maxWidth: 500, p: 1, zIndex: 10, position: 'relative'  }}
       >
         <Typography
           component={"h2"}
@@ -40,7 +40,7 @@ export default function GetStarted() {
           at the bottom-right of the page, to get our solutions and services now
         </Typography>
       </Box>
-      <Box className={"form-group"} sx={{ mb: 2 }}>
+      <Box className={"form-group"} sx={{ mb: 2,  zIndex: 10, position: 'relative'  }}>
         <TextField
           label={"Enter your email"}
           fullWidth
@@ -77,7 +77,7 @@ export default function GetStarted() {
         color={"secondary"}
         size={"large"}
         variant={"contained"}
-        sx={{ minWidth: 150, bgcolor: "#F0AF08", borderRadius: 5 }}
+        sx={{ minWidth: 150, bgcolor: "#F0AF08", borderRadius: 5, zIndex: 10, position: 'relative' }}
       >
         Submit
       </Button>

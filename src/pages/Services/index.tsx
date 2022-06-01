@@ -73,6 +73,30 @@ const Services = (): JSX.Element => {
           </Box>
         </Box>
       </Box>
+      <Box className={"brief-about-text"} sx={{ width: "100%", my: "5em !important"  }}>
+        <Typography
+          variant="subtitle1"
+          color="secondary"
+          fontWeight={600}
+          mb={3}
+        >
+          Let's Make Collaboration
+        </Typography>
+        <Typography
+          component={"div"}
+          variant={"subtitle2"}
+          fontWeight={600}
+          position={"relative"}
+          zIndex={100}
+        >
+          Let us help you reach your target audience and generate website-traffic as steady as a flowing stream.
+          At Frutiv Tech, we place more emphasis on creating viable partnerships, rather than on merely getting
+          new clients. Hence, we always work from the perspective of a business owner, and treat your business
+          just like it were ours. Our methods, pricing, services
+          and products are administered with the utmost level of transparency, and you can be rest-assured
+          that we will go to great lengths in order to help you to grow your business.
+        </Typography>
+      </Box>
       <Box className={"section-services"}>
         <Typography
           component={"h2"}
@@ -96,7 +120,7 @@ const Services = (): JSX.Element => {
                   component={"img"}
                   src={"/images/" + service.image}
                   alt={service.title}
-                  sx={{ maxWidth: "90%", width: 400, m: "auto" }}
+                  sx={{ maxWidth: "80%", width: 400, m: "auto" }}
                 />
                 <CardContent sx={{ textAlign: "center" }}>
                   <Typography
@@ -114,13 +138,7 @@ const Services = (): JSX.Element => {
                     maxWidth={400}
                     m={"auto"}
                   >
-                    If you’re a business owner or marketing executive and you’re
-                    looking for an awesome and enthusiastic partner to help you
-                    grow your business—from strategy creation to execution and
-                    ongoing optimization, you’ve come to the right place. Blue
-                    Corona helps companies increase leads and sales from the
-                    web, differentiate their brand, and optimize their marketing
-                    cost. The result? MORE BUSINESS GROWTH.
+                    {service.text.length > 150 ? service.text.substring(0, 150) + "..." : service.text}
                   </Typography>
                 </CardContent>
                 <CardActions>

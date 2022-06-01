@@ -20,7 +20,7 @@ export default function TopServices() {
         fontWeight={800}
         mb={4}
       >
-        Our Top Services
+        Our Services
       </Typography>
       <Box className={"mobile-view"}>
         {topServices.map((service, index) => {
@@ -35,7 +35,7 @@ export default function TopServices() {
                 component={"img"}
                 src={"/images/" + service.image}
                 alt={service.title}
-                sx={{ maxWidth: "90%" }}
+                sx={{ maxWidth: "80%", height: 250 }}
               />
               <CardContent sx={{ textAlign: "center" }}>
                 <Typography
@@ -51,13 +51,7 @@ export default function TopServices() {
                   variant={"subtitle2"}
                   fontWeight={600}
                 >
-                  If you’re a business owner or marketing executive and you’re
-                  looking for an awesome and enthusiastic partner to help you
-                  grow your business—from strategy creation to execution and
-                  ongoing optimization, you’ve come to the right place. Blue
-                  Corona helps companies increase leads and sales from the web,
-                  differentiate their brand, and optimize their marketing cost.
-                  The result? MORE BUSINESS GROWTH.
+                  {service.text.length > 150 ? service.text.substring(0, 200) + "..." : service.text}
                 </Typography>
               </CardContent>
               <CardActions>
@@ -66,8 +60,7 @@ export default function TopServices() {
                   color={"secondary"}
                   sx={{ textTransform: "none", borderRadius: "5px" }}
                 >
-                  {" "}
-                  Learn more{" "}
+                  Learn more
                 </Button>
               </CardActions>
             </Card>

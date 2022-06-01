@@ -79,7 +79,7 @@ function OurHub() {
               fontWeight={800}
               color={"secondary"}
             >
-              FRUTIV HUB
+              THE FRUTIV TECH HUB
             </Typography>
             <Typography component={"h1"} variant={"subtitle1"} fontWeight={500}>
               Getting to know about the frutiv hub.

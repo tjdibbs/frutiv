@@ -122,12 +122,12 @@ const Index: React.FC<Props> = (props): JSX.Element => {
           <Three small />
           <Box className={"brief-about-text"} sx={{ width: "100%" }}>
             <Typography
-              variant="subtitle1"
+              variant="h6"
               color="secondary"
-              fontWeight={600}
+              fontWeight={800}
               mb={3}
             >
-              What We Believe
+              You Are In The Right Place
             </Typography>
             <Typography
               component={"div"}
@@ -136,12 +136,12 @@ const Index: React.FC<Props> = (props): JSX.Element => {
               position={"relative"}
               zIndex={100}
             >
-              We believe in building partnerships, not acquiring clients. Above
-              all, everything we do comes from the perspective of a business
-              owner, and we treat your business like our own. We’re transparent
-              about our methods, our pricing, and our deliverables. The best
-              part? You get the peace of mind that we will bend over backwards
-              to do whatever it takes to grow your business.
+              If you’re a business owner or marketing executive and you’re
+              looking for an awesome and enthusiastic partner to help you
+              grow your business—from strategy creation to execution and
+              ongoing optimization, you’ve come to the right place. Frutiv Tech Company helps companies increase leads and sales from the web,
+              differentiate their brand, and optimize their marketing cost.
+              The result? MORE BUSINESS GROWTH.
             </Typography>
           </Box>
         </Container>
@@ -436,18 +436,18 @@ const Index: React.FC<Props> = (props): JSX.Element => {
 
 function Three({ small }: { small?: boolean }) {
   const theme = useTheme();
-  const [width, setWidth] = React.useState(window.innerWidth < 450);
+  const [width, setWidth] = React.useState(window.innerWidth < 520);
 
   React.useEffect(() => {
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 450) {
+      if (window.innerWidth > 520) {
         setWidth(false);
       } else setWidth(true);
     });
 
     return () =>
       window.removeEventListener("resize", () => {
-        if (window.innerWidth > 450) {
+        if (window.innerWidth > 520) {
           setWidth(false);
         } else setWidth(true);
       });

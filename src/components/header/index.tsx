@@ -103,6 +103,7 @@ const Index: React.FC = () => {
             </IconButton>
           </Box>
           <IconButton
+            size={'large'}
             sx={{ display: "none" }}
             className={"menu-toggler"}
             onClick={() => setOpen(!open)}
