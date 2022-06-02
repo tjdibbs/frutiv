@@ -12,7 +12,7 @@ import {
 import React from "react";
 import { NavLink } from "react-router-dom";
 import GetStarted from "../../components/get-started";
-import j from "jquery";
+import Footer from "../../components/footer";
 
 const websites = [
   {
@@ -38,43 +38,6 @@ const websites = [
 function Portfolio() {
   const theme = useTheme();
   const webRef = React.useRef<HTMLDivElement>(null);
-  // React.useEffect(() => {
-  //   const element = webRef.current as HTMLDivElement;
-  //   let timerStore: NodeJS.Timer;
-
-  //   function Animate() {
-  //     let ended = true;
-  //     timerStore = setInterval(() => {
-  //       const w = j(element).prop("scrollWidth");
-  //       const innerWidth = window.innerWidth;
-  //       let left = j(element).prop("scrollLeft");
-
-  //       if (w - innerWidth + 15 <= left || ended) {
-  //         if (left <= 4 && left !== 0 && left !== 1) {
-  //           setTimeout(() => {
-  //             j(element).prop("scrollLeft", left - 2);
-  //             ended = true;
-  //           }, 1000);
-  //         } else {
-  //           j(element).prop("scrollLeft", left - 2);
-  //           ended = true;
-  //         }
-  //       }
-
-  //       if (!ended) {
-  //         j(element).prop("scrollLeft", left + 2);
-  //       }
-
-  //       if (left <= 2) ended = false;
-  //     }, 50);
-  //   }
-
-  //   Animate();
-
-  //   return () => {
-  //     clearInterval(timerStore);
-  //   };
-  // });
 
   return (
     <Box className="portfolio-wrapper">
@@ -356,6 +319,8 @@ function Portfolio() {
       <Container>
         <GetStarted />
       </Container>
+  
+      <Footer />
     </Box>
   );
 }

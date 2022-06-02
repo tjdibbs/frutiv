@@ -5,6 +5,7 @@ import Header from "./header/index";
 import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "../lib/createEmotionCache";
 import ScrollToTop from "./scrollToTop";
+import Footer from "./footer";
 
 const cache = createEmotionCache();
 

@@ -17,13 +17,12 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import TopServices from "../../components/topServices";
 import Hub from "../../components/hub";
 import GetStarted from "../../components/get-started";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import { Navigation, Pagination, Autoplay } from "swiper";
+import Footer from "../../components/footer";
 
 interface Props {}
 
@@ -430,6 +429,7 @@ const Index: React.FC<Props> = (props): JSX.Element => {
           <GetStarted />
         </Container>
       </div>
+      <Footer />
     </Box>
   );
 };

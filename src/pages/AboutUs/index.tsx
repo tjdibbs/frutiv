@@ -13,6 +13,7 @@ import Hub from "../../components/hub";
 import GetStarted from "../../components/get-started";
 import { NavLink } from "react-router-dom";
 import {services} from "../LandingPage/data";
+import Footer from "../../components/footer";
 
 const AboutUs = (): JSX.Element => {
   const theme = useTheme();
@@ -70,6 +71,59 @@ const AboutUs = (): JSX.Element => {
           </Box>
           <Box className={"float-right"}>
             <img src="/images/about.png" alt="contact us vector" />
+          </Box>
+        </Box>
+      </Container>
+      <Container
+        className={"brief-about-text"}
+        sx={{ mx: "auto", my: "3em!important", maxWidth: "100%" }}
+      >
+        <Typography
+          className={"section-title"}
+          variant={"h6"}
+          fontWeight={800}
+          color={'secondary'}
+          mb={3}
+        >
+          What You Need To Know
+        </Typography>
+        <Typography
+          component={"div"}
+          variant={"subtitle2"}
+          fontWeight={600}
+          position={"relative"}
+          zIndex={100}
+        >
+          Frutiv Technologies is a Software-Development and Blockchain Service Company
+          based in Lagos State in Nigeria.
+          Our team of highly-creative, professionally-skilled and highly-dedicated individuals is
+          committed to providing innovative Blockchain-solutions that enable new Blockchain
+          possibilities for startups and well-established businesses alike.
+          For more than a decade, we have worked with dozens of reputable organisations in
+          and outside Africa to provide them internet solutions that meet their peculiar needs in
+          the areas of Website Design, Mobile-App Development, Digital Marketing, Blockchain
+          Solutions and Branding... offering businesses and individuals digital-solutions and
+          support that will help them to build and scale their own digital-products effectively and
+          efficiently.
+          Our developers are on hand to offer you timely and result-oriented digital marketingservices.
+          Employing only the best approaches to implementing Blockchain solutions, we work
+          with our clients to develop Blockchain projects from scratch, or to help them improve
+          on their existing systems.
+          We help our clients to build projects that feature Custom Consensus-Algorithms,
+          Cryptocurrencies, Private Nodes and Custom Service-Architecture.
+          Our winning approach is Client-based and customer-centric, creating internet
+          solutions that deliver tangible and measurable business results
+        </Typography>
+        <Box className="services">
+          <Typography fontWeight={800} my={3}>Our Services Include</Typography>
+          <Box className="services-wrap"  display={"flex"} flexWrap={'wrap'} gap={2}>
+            {
+              services.map((service,index)=>{
+                return(
+                  <Chip key={index} label={service} sx={{fontWeight: 600}} />
+                )
+              })
+            }
           </Box>
         </Box>
       </Container>
@@ -227,59 +281,6 @@ const AboutUs = (): JSX.Element => {
         </Box>
       </Container>
       <Container
-        className={"brief-about-text"}
-        sx={{ mx: "auto", my: "3em!important", maxWidth: "100%" }}
-      >
-        <Typography
-          className={"section-title"}
-          variant={"h6"}
-          fontWeight={800}
-          color={'secondary'}
-          mb={3}
-        >
-          What You Need To Know
-        </Typography>
-        <Typography
-          component={"div"}
-          variant={"subtitle2"}
-          fontWeight={600}
-          position={"relative"}
-          zIndex={100}
-        >
-          Frutiv Technologies is a Software-Development and Blockchain Service Company
-          based in Lagos State in Nigeria.
-          Our team of highly-creative, professionally-skilled and highly-dedicated individuals is
-          committed to providing innovative Blockchain-solutions that enable new Blockchain
-          possibilities for startups and well-established businesses alike.
-          For more than a decade, we have worked with dozens of reputable organisations in
-          and outside Africa to provide them internet solutions that meet their peculiar needs in
-          the areas of Website Design, Mobile-App Development, Digital Marketing, Blockchain
-          Solutions and Branding... offering businesses and individuals digital-solutions and
-          support that will help them to build and scale their own digital-products effectively and
-          efficiently.
-          Our developers are on hand to offer you timely and result-oriented digital marketingservices.
-          Employing only the best approaches to implementing Blockchain solutions, we work
-          with our clients to develop Blockchain projects from scratch, or to help them improve
-          on their existing systems.
-          We help our clients to build projects that feature Custom Consensus-Algorithms,
-          Cryptocurrencies, Private Nodes and Custom Service-Architecture.
-          Our winning approach is Client-based and customer-centric, creating internet
-          solutions that deliver tangible and measurable business results
-        </Typography>
-        <Box className="services">
-          <Typography fontWeight={800} my={3}>Our Services Include</Typography>
-          <Box className="services-wrap"  display={"flex"} flexWrap={'wrap'} gap={2}>
-            {
-              services.map((service,index)=>{
-                return(
-                  <Chip key={index} label={service} sx={{fontWeight: 600}} />
-                )
-              })
-            }
-          </Box>
-        </Box>
-      </Container>
-      <Container
         maxWidth={false}
         className={"section-what-we-do"}
         sx={{ my: 10 }}
@@ -431,6 +432,8 @@ const AboutUs = (): JSX.Element => {
         <Hub />
         <GetStarted />
       </Container>
+  
+      <Footer />
     </Box>
   );
 };
