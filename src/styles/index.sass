@@ -1,0 +1,604 @@
+@import "media"
+
+$transition: all .30s ease-in-out
+$cream: rgba(188, 191, 22, .19)
+$orange:rgba(240, 175, 8, .29)
+$primary: #9C9130
+$secondary: #F06908
+$info: #F0AF08
+
+
+
+html
+  max-width: 100vw
+  overflow-x: hidden
+.page-header
+  background: #fff!important
+  box-shadow: 0 4px 10px $cream!important
+  .bottom-header
+    background: $cream
+  .link
+    padding: 13px
+    text-decoration: none
+    color: $primary
+    font-weight: 600
+    &:hover,&.active
+      background: #fff
+      color: #F06908
+
+.container
+  .section-front
+    position: relative
+    &::before
+      position: absolute
+      content: ""
+      width: 80%
+      left: 50%
+      pointer-events: none
+      top: 0
+      transform: translateX(-50%)
+      background: rgba(240, 105, 8,9%)
+      filter: blur(2em)
+      border-radius: 50%
+      height: 100%
+  .card-container
+    display: flex
+    flex-wrap: nowrap
+    align-items: center
+    //row-gap: 1em
+    column-gap: 1em
+  .card
+    display: grid
+    border-radius: 5px
+    //padding: 1em
+    min-width: 150px
+    color: #ffffff
+    place-items: center
+    place-content: center
+    width: 150px
+    height: 120px
+    z-index: 10
+    .icon
+      margin-bottom: .4em
+    @include media_400
+      width: 120px
+      height: 120px
+      min-width: 120px
+      .icon
+        height: 25px
+        width: 25px
+      .primary-text
+        font-size: 14px
+      &.different .primary-text
+        font-size: 12px
+      .secondary-text
+        font-size: 11px
+      
+  .front-wrapper
+    display: flex
+    flex-wrap: wrap
+    padding: 3em 1em
+    gap: 2em
+    justify-content: space-between
+    margin-top: 2em
+    align-items: center
+
+    .float-left
+      width: 400px
+      max-width: 40%
+      .active-page
+        position: relative
+        height: 200px
+        margin-top: 2em
+
+        .big-text
+          position: relative
+          z-index: 10
+
+    .float-right
+      width: 50%
+      // flex-grow: 1
+      img 
+        width: 100%
+        margin: auto
+        display: block
+        max-width: 100%
+
+    @include media_800
+      flex-wrap: wrap-reverse
+      .float-left,.float-right
+        max-width: 100%
+        width: 100%
+      .float-right
+        img
+          width: 500px
+          max-width: 90%
+          
+
+  .brief-about-text,.brief-text
+    background: rgba(188, 191, 22, 19%)
+    padding: 2em 3em
+    border-radius: 10px
+    margin-top: -3em
+    position: relative
+    
+    
+    @include media_600
+      padding-inline: 1.5em
+      border-radius: 0
+
+  .brief-text
+    padding-inline: 1em !important
+    box-shadow: 0 0 20px rgba(156, 145, 48, 23%)  
+    border-radius: 10px
+
+  .section-method
+    .card
+      display: grid
+      place-content: center
+      place-items: center
+      border: 1px dashed
+      width: 120px
+      min-height: 100px
+      border-radius: 10px
+      text-align: center
+      padding: 1em
+      .icon
+        margin-bottom: 1em
+  .section-web-services, .section-top-services,.section-services
+    position: relative
+    &::before
+      position: absolute
+      content: ""
+      background-color: rgba(20, 189, 118, 9%)
+      width: 100%
+      height: 130%
+      top: 50%
+      left: 0
+      pointer-events: none
+      transform: translateY(-50%)
+      border-radius: 100%
+      filter: blur(5em)
+    .section-card.active
+      color: #fff!important
+    .service-preview
+      position: relative
+      .fill-gap
+        position: absolute
+        left: 258px
+        top: -20px
+        width: 235px
+        height: 20px
+        background-color: inherit
+    .mobile-view,.services-wrapper
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      gap: 1em
+
+      .section-card
+        width: 350px
+        padding: 2em 1em
+        height: initial
+        max-width: 100%
+        border-radius: 10px
+        // clip-path: polygon(5% 4%, 100% 0%, 95% 95%, 0% 100%)
+
+      .service
+        width: 30%
+        min-width: 320px
+        flex-grow: 1
+
+  // Hub Stylesheet
+  .section-team
+    .swiper
+      width: 100%
+      padding-top: 50px
+      padding-bottom: 50px
+
+      .swiper-slide
+        width: 200px
+    .team
+      display: grid
+      place-content: center
+      place-items: center
+      transition: $transition
+
+      &.active
+        transform: scale(.7)
+
+    .image-wrap
+      background: #fff
+      border-radius: 50%
+      display: grid
+      margin-bottom: 1em
+      &.not-active
+        padding: 10px
+        margin: 0
+
+    .staff-image
+      border-radius: 50%
+      width: 60px
+      height: 60px
+      &.active
+        width: 150px
+        height: 150px
+  .section-hub
+    position: relative
+    &::before
+      position: absolute
+      content: ""
+      background-color: rgba(240, 105, 8, 9%)
+      width: 100%
+      height: 130%
+      top: 50%
+      border-radius: 100%
+      filter: blur(5em)
+    .swiper-slide
+      min-width: 300px
+
+  @keyframes Scroll
+    from 
+      transform: translateX(-100%)
+    to
+      transform: translateX(0%)
+    
+
+  // Portfolio stylesheet 
+  .section-web-services
+    background: $cream
+    text-align: center
+    padding-block: 3em
+    max-width: 100vw
+    height: auto
+    overflow: hidden
+    .list-wrapper
+      overflow: auto hidden
+      @media (min-width: 550px)
+        &::-webkit-scrollbar
+          background: #fff
+          height: 10px
+        &::-webkit-scrollbar-thumb
+          background:  $primary
+          border-radius: 50px
+    .website-list
+      display: flex
+      width: max-content
+      margin: auto
+      justify-content: center
+      overflow: auto
+      gap: 2em
+      padding: 2em
+      flex-wrap: nowrap
+      position: relative
+      z-index: 10
+      scroll-behavior: auto
+      animation: Scroll 20s 1s ease-in-out infinite alternate-reverse
+      @media (min-width: 550px)
+        animation-duration: 30s
+        &::-webkit-scrollbar
+          background: #fff
+          height: 10px
+        &::-webkit-scrollbar-thumb
+          background:  $primary
+          border-radius: 50px
+      .website-cover
+        width: 600px
+        max-width: 100vw
+        border-radius: 20px
+      .content
+        width: 400px
+        max-width: 90%
+        margin: auto
+  .mobile-applications
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 2em
+    .application
+      border-radius: 30px
+      overflow: hidden
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 25%)
+      .frame
+        background: #000
+        padding: .4em
+        overflow: hidden
+        border-radius: 30px
+        width: 300px
+        height: 600px
+        .top-bar
+          height: 30px
+          display: flex
+          flex-grow: 1
+          background: #000
+          border-radius: 0 0 20px 20px
+          justify-content: center
+          align-items: center
+          gap: 1em
+          padding-block: .5em
+          .speaker,.camera
+            height: 5px
+            border-radius: 50px
+            background: white
+            width: 40px
+            display: block
+          .camera
+            height: 10px
+            width: 10px
+            border-radius: 50%
+        .screen
+          border-radius: inherit
+          height: 100%
+          background: #fff
+          .status-bar
+            display: flex
+            flex-wrap: nowrap
+            padding-inline: .5em
+            gap: 1em
+            .left-status
+              display: flex
+              align-items: center
+              gap: .4em
+              padding: 3px
+            .network-status
+              display: flex
+              padding: .4em
+              transform: rotateZ(180deg)
+              span
+                display: block
+                width: 3px
+                margin-left: 3px
+                height: 15px
+                border-radius: 50px
+                background: lightgrey
+                @for $i from 1 through 4 
+                  &:nth-child(#{$i}) 
+                    height:  #{$i * 4}px
+                    @if($i < 4)
+                      background: grey
+            .battery-status
+              height: 10px
+              width: 20px
+              border-radius: 2px
+              background: transparent
+              border: 1px solid lightgrey
+              position: relative
+              &::before
+                content: ""
+                position: absolute
+                left: 0
+                width: 50%
+                height: 100%
+                background: #45c413
+                border-radius: inherit    
+          .render-screen
+            height: 100%
+            display: grid
+            place-items: center
+            place-contents: center
+            padding: 1em
+            .app.description
+              max-width: 90%
+              border-radius: 10px
+              padding: 1.5em 1em
+              background-color: $secondary
+            .get-app-links
+              .link
+                display: flex
+                gap: .5em
+                padding: 5px
+                border-radius: 5px
+                .text
+                  text-align: left
+                  line-height: 16px
+                .title
+                  font-size: 12px
+                .store
+                  font-weight: 600
+                  font-size: 12ox
+              span
+                display: inline-block
+  .section-testimonies
+    background-color: $cream
+    padding: 4em 2em
+    .clients-wrapper
+      position: relative
+      display: flex
+      max-width: 700px
+      margin: auto
+      row-gap: 2em
+      column-gap: 2em
+      flex-wrap: wrap
+      justify-content: center
+      @include media_400 
+        column-gap: 1em
+      .client
+        display: grid
+        flex-grow: 1
+        place-items: center
+        background: #fff
+        border-radius: 10px
+        padding: 1em
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20%)
+
+
+  // About us Stylesheet
+  .section-choose-us
+    display: flex
+    align-items: center
+    margin-bottom: 5em
+    flex-wrap: nowrap
+
+    @include media_800 
+      flex-wrap: wrap-reverse
+      justify-content: center
+
+    .section-content
+      width: 500px
+      padding-right: 1em
+      max-width: 100%
+
+      @include media_800 
+        width: max-content
+      .step
+        display: flex
+        align-items: center
+        gap: 2em
+        position: relative
+
+        @include media_400 
+          h3
+            font-size: 1em
+        &:not(:last-child)
+            margin-bottom: 1.5em
+            .step-index
+              &::before
+                position: absolute
+                content: ""
+                height: 1.5em
+                width: 5px
+                left: 50%
+                transform: translateX(-50%)
+                top: 100%
+                border-radius: 50px
+                background: $secondary
+        &.one
+          .step-index::before
+            background: $info!important
+                
+            
+        .step-index
+          border: 7px solid
+          display: grid
+          place-items: center
+          border-radius: 50%
+          font-weight: 800
+          min-width: 60px
+          min-height: 60px
+          font-size: 1.5em
+          position: relative
+    .section-media
+      width: 50%
+      flex-grow: 1
+      img
+        width: 100%
+  .section-what-we-do
+    background: $cream
+    padding: 2em
+    .services
+      display: grid
+      gap: 1.5em
+      place-content: center
+      place-items: center
+      grid-template-columns: repeat(auto-fit, minmax(200px, 250px))
+
+      .service-keyword
+        height: 150px
+        padding: 3em
+        display: grid
+        place-items: center
+        text-align: center
+        color: #fff
+        margin-block: 1em
+
+      .service-description
+        text-align: center
+        font-weight: 500
+  .section-development
+    margin-block: 10em
+    .languages
+      display: flex
+      gap: 2em
+      flex-wrap: wrap
+      div
+        border: 1px solid $primary
+        box-shadow: 0 0 20px $cream
+        padding: 1em
+        border-radius: 10px
+        display: grid
+        flex-grow: 1
+        place-items: center
+        width: max-content
+      img
+        max-width: 150px
+      
+      @include media_600
+          gap: 1em
+          img
+            max-width: 100px
+  
+  // Contact us styleesheet
+  .contact-us-wrapper
+    .section-main
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+
+      @include media_800
+        justify-content: space-around
+
+      .info-wrapper
+        width: 350px
+        max-width: 90%
+        .info-list          
+          &::before
+            position: absolute
+            left: 0
+            width: 3px
+            background-color: $secondary
+            content: ""
+            height: 100%
+            top: 0
+            border-radius: 50px
+
+
+  // get-started-section
+  .get-started-section
+    position: relative
+    overflow: hidden
+    &::before,&::after
+      content: ""
+      position: absolute
+      width: 500px
+      height: 500px
+      border-radius: 50%
+      right: -250px
+      top: -50%
+      background: rgba(255,255,255 ,.1)
+    &::after
+      left: -200px
+      top: 30%
+@include media_600
+  .bottom-header,.phone-icon,.social-icons-container
+    display: none!important
+  .menu-toggler
+    display: block!important
+  .page-header
+    box-shadow: none!important
+  .mobile-view
+    .section-card
+      width: 100%!important
+
+
+@include media_400
+  .brief-about-text
+    padding-inline: 1em!important
+    text-align: justify
+  .big-text
+    font-size: 2em!important
+  .top-header
+    padding-inline: 5px!important
+  .image-container
+    margin-top: -2em!important
+
+@include media_800
+  .section-hub
+    flex-direction: column
+    justify-content: flex-end
+    .section-wrapper
+      width: 100%
+    .image-container
+      max-width: 100%
+      display: grid
+      place-items: flex-end
+      margin-top: -5em
