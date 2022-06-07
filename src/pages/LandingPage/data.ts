@@ -13,7 +13,11 @@ export const drive = [
   },
   {
     name: "carbon:phone-application",
+<<<<<<< HEAD
     label: "Lead Recovery",
+=======
+    label: "Leading Recovery",
+>>>>>>> 5b147ac3a13eefa31bd2cbe0b2015552d8eb817f
   },
   {
     name: "icon-park-outline:seo",
@@ -51,7 +55,11 @@ export const topServices = [
   {
     image: "/mobile.png",
     title: "Mobile App Development",
+<<<<<<< HEAD
     text: "We are experts in the development of Mobile Apps for both the iOS and Android platforms. We also create cross-platform Apps using React Native and Flutter.\n" +
+=======
+    text: "We are experts in the development of Mobile Apps for both the iOS and Android platforms. We also create cross-platform Apps using Cordova.\n" +
+>>>>>>> 5b147ac3a13eefa31bd2cbe0b2015552d8eb817f
       "So, if you are looking to developing a new Mobile App or upgrading one which you have already, we’ve got you covered"
   },
   {
@@ -65,7 +73,11 @@ export const topServices = [
   {
     image: "/branding.png",
     title: "Branding",
+<<<<<<< HEAD
     text: "We help brands interprete thier ideas into visuals that will make then stand-out in their field, its not just about creating visually appealing graphics, its about a design strategy that employs thinking that combines insight and ingenuity to unlock the reasons why a brand should be loved by its customers.",
+=======
+    text: "Let get your blockchain financing on the go, making you experience the world of cryptocurrency.",
+>>>>>>> 5b147ac3a13eefa31bd2cbe0b2015552d8eb817f
     description: "",
   },
   {

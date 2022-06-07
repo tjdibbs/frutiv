@@ -83,7 +83,11 @@ export default function Footer(){
                       Contact Us
                     </Typography>
                     <Box className="phone" mb={2}>
+<<<<<<< HEAD
                       <Typography variant={'caption'} color={'#E5E5E5'}>Phone us - <Link sx={{color: '#fff'}} underline={'none'} href="tel:+2347085830807"><Chip sx={{color: '#E5E5E5'}} label={'+234-708-583-0807'} /></Link></Typography>
+=======
+                      <Typography variant={'caption'} color={'#E5E5E5'}>Phone us - <Link sx={{color: '#fff'}} underline={'none'} href="tel:+2349017241037"><Chip sx={{color: '#E5E5E5'}} label={'+2349017241037'} /></Link></Typography>
+>>>>>>> 5b147ac3a13eefa31bd2cbe0b2015552d8eb817f
                     </Box>
                     <Box className="email">
                       <Typography variant={'caption'} color={'#E5E5E5'}>Email us - <Link underline={'none'} href="mailTo:info@frutiv.com"><Chip sx={{color: '#E5E5E5'}} label={'info@frutiv.com'}/></Link></Typography>

@@ -64,7 +64,13 @@ const Services = (): JSX.Element => {
                   variant={"subtitle2"}
                   px={1}
                 >
+<<<<<<< HEAD
                   We provide high-quality digital services, with full analytics, that help you grow your social media, reach your target audience and improve your bottom line.
+=======
+                  We provide digital quality services, we help you reach your
+                  target audience, we give full analytics , we help grow your
+                  social media.
+>>>>>>> 5b147ac3a13eefa31bd2cbe0b2015552d8eb817f
                 </Typography>
               </Box>
             </Box>
