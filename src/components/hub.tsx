@@ -18,13 +18,7 @@ function Hub() {
           >
             THE FRUTIV TECH HUB
           </Typography>
-<<<<<<< HEAD
          
-=======
-          <Typography component={"h1"} variant={"subtitle2"} fontWeight={400}>
-            Getting to know about the frutiv hub.
-          </Typography>
->>>>>>> 5b147ac3a13eefa31bd2cbe0b2015552d8eb817f
         </Box>
         <Box className={"section-text"} sx={{ my: 5 }}>
           <Typography component={"p"} variant={"subtitle1"} fontWeight={500}>

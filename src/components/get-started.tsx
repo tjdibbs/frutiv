@@ -28,11 +28,7 @@ export default function GetStarted() {
           fontWeight={800}
           color={"#fff"}
         >
-<<<<<<< HEAD
           Want our service?
-=======
-          Want How Service ?
->>>>>>> 5b147ac3a13eefa31bd2cbe0b2015552d8eb817f
         </Typography>
         <Typography
           component={"h2"}
@@ -40,13 +36,8 @@ export default function GetStarted() {
           fontWeight={400}
           color={"#fff"}
         >
-<<<<<<< HEAD
           Provide your email below or chat directly with us by clicking on the chat button at the 
           bottom-right of the page, to get our solutions and services now.
-=======
-          Provide your email below or chat directly with us with the chat talk
-          at the bottom-right of the page, to get our solutions and services now
->>>>>>> 5b147ac3a13eefa31bd2cbe0b2015552d8eb817f
         </Typography>
       </Box>
       <Box className={"form-group"} sx={{ mb: 2,  zIndex: 10, position: 'relative'  }}>
