@@ -1,11 +1,11 @@
 import React from "react";
-import { ThemeProvider, Box, CssBaseline } from "@mui/material";
+import {ThemeProvider, Box, CssBaseline, IconButton} from "@mui/material";
 import theme from "../lib/theme";
 import Header from "./header/index";
 import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "../lib/createEmotionCache";
 import ScrollToTop from "./scrollToTop";
-import Footer from "./footer";
+import {Icon} from '@iconify/react'
 
 const cache = createEmotionCache();
 

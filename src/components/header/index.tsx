@@ -65,42 +65,50 @@ const Index: React.FC = () => {
           </NavLink>
           <Box sx={{ display: "grid" }} className={"social-icons-container"}>
             <Stack direction={"row"} spacing={1}>
-              <IconButton>
-                <Icon
-                  icon="akar-icons:facebook-fill"
-                  color={"#9C9130"}
-                  height="24"
-                />
-              </IconButton>
-              <IconButton>
-                <Icon
-                  icon="brandico:twitter-bird"
-                  color={"#9C9130"}
-                  height="20"
-                />
-              </IconButton>
-              <IconButton>
-                <Icon
-                  icon="ant-design:instagram-filled"
-                  color={"#9C9130"}
-                  height="24"
-                />
-              </IconButton>
+              <a href="https://facebook.com/frutiv_tech" target={'_blank'}>
+                <IconButton>
+                  <Icon
+                    icon="akar-icons:facebook-fill"
+                    color={"#9C9130"}
+                    height="24"
+                  />
+                </IconButton>
+              </a>
+              <a href="https://twitter.com/frutiv_tech" target={'_blank'}>
+                <IconButton>
+                  <Icon
+                    icon="brandico:twitter-bird"
+                    color={"#9C9130"}
+                    height="20"
+                  />
+                </IconButton>
+              </a>
+              <a href="https://instagram.com/frutiv_tech" target={'_blank'}>
+                <IconButton>
+                  <Icon
+                    icon="ant-design:instagram-filled"
+                    color={"#9C9130"}
+                    height="24"
+                  />
+                </IconButton>
+              </a>
             </Stack>
           </Box>
           <Box className={"phone-icon"}>
-            <IconButton
-              sx={{
-                color: theme.palette.primary.light,
-                boxShadow: theme.shadows[15],
-              }}
-            >
-              <Icon
-                icon="ant-design:phone-filled"
-                color={"#F06908"}
-                height="30"
-              />
-            </IconButton>
+            <a href="tel:+2349017241037">
+              <IconButton
+                sx={{
+                  color: theme.palette.primary.light,
+                  boxShadow: theme.shadows[15],
+                }}
+              >
+                <Icon
+                  icon="ant-design:phone-filled"
+                  color={"#F06908"}
+                  height="30"
+                />
+              </IconButton>
+            </a>
           </Box>
           <IconButton
             size={'large'}
@@ -168,42 +176,50 @@ const Index: React.FC = () => {
             >
               <Box sx={{ display: "grid" }}>
                 <Stack direction={"row"} spacing={1}>
-                  <IconButton>
-                    <Icon
-                      icon="akar-icons:facebook-fill"
-                      color={"#9C9130"}
-                      height="24"
-                    />
-                  </IconButton>
-                  <IconButton>
-                    <Icon
-                      icon="brandico:twitter-bird"
-                      color={"#9C9130"}
-                      height="20"
-                    />
-                  </IconButton>
-                  <IconButton>
-                    <Icon
-                      icon="ant-design:instagram-filled"
-                      color={"#9C9130"}
-                      height="24"
-                    />
-                  </IconButton>
+                  <a href="https://facebook.com/frutiv_tech" target={'_blank'}>
+                    <IconButton>
+                      <Icon
+                        icon="akar-icons:facebook-fill"
+                        color={"#9C9130"}
+                        height="24"
+                      />
+                    </IconButton>
+                  </a>
+                  <a href="https://twitter.com/frutiv_tech" target={'_blank'}>
+                    <IconButton>
+                      <Icon
+                        icon="brandico:twitter-bird"
+                        color={"#9C9130"}
+                        height="20"
+                      />
+                    </IconButton>
+                  </a>
+                  <a href="https://instagram.com/frutiv_tech" target={'_blank'}>
+                    <IconButton>
+                      <Icon
+                        icon="ant-design:instagram-filled"
+                        color={"#9C9130"}
+                        height="24"
+                      />
+                    </IconButton>
+                  </a>
                 </Stack>
               </Box>
               <Box>
-                <IconButton
-                  sx={{
-                    color: theme.palette.primary.light,
-                    boxShadow: theme.shadows[15],
-                  }}
-                >
-                  <Icon
-                    icon="ant-design:phone-filled"
-                    color={"#F06908"}
-                    height="30"
-                  />
-                </IconButton>
+                <a href="tel:+2349017241037">
+                  <IconButton
+                    sx={{
+                      color: theme.palette.primary.light,
+                      boxShadow: theme.shadows[15],
+                    }}
+                  >
+                    <Icon
+                      icon="ant-design:phone-filled"
+                      color={"#F06908"}
+                      height="30"
+                    />
+                  </IconButton>
+                </a>
               </Box>
             </Toolbar>
           </Box>

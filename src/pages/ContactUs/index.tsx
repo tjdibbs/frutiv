@@ -14,32 +14,26 @@ import { Icon } from "@iconify/react";
 import { NavLink } from "react-router-dom";
 import GetStarted from "../../components/get-started";
 import Footer from "../../components/footer";
+import { useForm } from "react-hook-form";
 
-const infos = [
-  {
-    title: "Company Name",
-    caption: "Frutiv Technologies",
-    icon: "ep:office-building",
-  },
-  {
-    title: "Located",
-    caption: "70, Alhaji Masha Road, Surulere, Lagos State, Nigeria.",
-    icon: "akar-icons:location",
-  },
-  {
-    title: "Email",
-    caption: "info@frutiv.com",
-    icon: "clarity:email-solid",
-  },
-  {
-    title: "Telephone",
-    caption: "+2349017241037",
-    icon: "fluent:call-28-filled",
-  },
-];
+type State = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 function ContactUs() {
   const theme = useTheme();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<State>();
+
+  const onSubmit = (formData: State) => {
+    console.log({ formData });
+  };
   return (
     <React.Fragment>
       <Container className="contact-us-wrapper">
@@ -185,7 +179,12 @@ function ContactUs() {
                 We are ready to deliver to you at your specified time.
               </Typography>
             </Box>
-            <Box component={"form"} action="#" className="form">
+            <Box
+              onSubmit={handleSubmit(onSubmit)}
+              component={"form"}
+              action="#"
+              className="form"
+            >
               <Grid
                 container
                 gap={3}
@@ -204,7 +203,9 @@ function ContactUs() {
                     label="Your Full Name"
                     variant={"outlined"}
                     color={"secondary"}
+                    {...register("name", { required: true })}
                     fullWidth
+                    error={Boolean(errors.name)}
                   />
                 </Grid>
                 <Grid
@@ -218,7 +219,9 @@ function ContactUs() {
                     label="Your Email"
                     variant={"outlined"}
                     color={"secondary"}
+                    {...register("email", { required: true })}
                     fullWidth
+                    error={Boolean(errors.email)}
                   />
                 </Grid>
                 <Grid item sx={{ width: "100%" }}>
@@ -226,7 +229,9 @@ function ContactUs() {
                     label="Subject"
                     variant={"outlined"}
                     color={"secondary"}
+                    {...register("subject", { required: true })}
                     fullWidth
+                    error={Boolean(errors.subject)}
                   />
                 </Grid>
                 <Grid item sx={{ width: "100%" }}>
@@ -234,9 +239,11 @@ function ContactUs() {
                     label="Message"
                     variant={"outlined"}
                     color={"secondary"}
+                    {...register("message", { required: true })}
                     multiline
                     rows={4}
                     fullWidth
+                    error={Boolean(errors.message)}
                   />
                 </Grid>
               </Grid>
@@ -256,3 +263,26 @@ function ContactUs() {
 }
 
 export default ContactUs;
+
+const infos = [
+  {
+    title: "Company Name",
+    caption: "Frutiv Technologies",
+    icon: "ep:office-building",
+  },
+  {
+    title: "Located",
+    caption: "70, Alhaji Masha Road, Surulere, Lagos State, Nigeria.",
+    icon: "akar-icons:location",
+  },
+  {
+    title: "Email",
+    caption: "info@frutiv.com",
+    icon: "clarity:email-solid",
+  },
+  {
+    title: "Telephone",
+    caption: "+2349017241037",
+    icon: "fluent:call-28-filled",
+  },
+];

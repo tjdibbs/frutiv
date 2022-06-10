@@ -70,13 +70,13 @@ const Index: React.FC<Props> = (props): JSX.Element => {
                   mb={5}
                   component={"h3"}
                   variant={"h3"}
-                  fontWeight={800}
+                  fontWeight={1000}
                   // color={theme.palette.secondary.main}
                   sx={{
                     [theme.breakpoints.down(850)]: { textAlign: "center" },
                   }}
                 >
-                  Let us help you reach your target audience 
+                  Let us help you reach your target audience
                 </Typography>
 
                 
@@ -401,7 +401,7 @@ const Index: React.FC<Props> = (props): JSX.Element => {
                                 variant={"caption"}
                                 color={"secondary"}
                               >
-                                Global Fashions Company
+                                Global Fashion Company
                               </Typography>
                             }
                           />
