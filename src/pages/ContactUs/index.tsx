@@ -15,7 +15,6 @@ import { NavLink } from "react-router-dom";
 import GetStarted from "../../components/get-started";
 import Footer from "../../components/footer";
 import { useForm } from "react-hook-form";
-
 type State = {
   name: string;
   email: string;
@@ -86,7 +85,7 @@ function ContactUs() {
               </Box>
             </Box>
             <Box className={"float-right"}>
-              <img src="/images/contact-us.png" alt="contact us vector" />
+              <img src={"/images/contact-us.png"} alt="contact us vector" />
             </Box>
           </Box>
         </Box>

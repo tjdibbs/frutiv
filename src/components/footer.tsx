@@ -30,7 +30,7 @@ export default function Footer() {
   };
   return (
     <Box bgcolor={theme.palette.primary.main} className={"footer-container"}>
-      <Box className="footer-wrapper" p={3} py={"6em"}>
+      <Box className="footer-wrapper" p={3} pt={"6em"}>
         <Box
           sx={{
             display: "flex",
@@ -209,11 +209,7 @@ export default function Footer() {
               </IconButton>
             </Stack>
           </Box>
-          <Typography
-            variant={"caption"}
-            textAlign={"center"}
-            color={"text.secondary"}
-          >
+          <Typography variant={"subtitle2"} textAlign={"center"} color={"#fff"}>
             &copy; Copyright 2022 | All Rights Reserved - Frutiv Technology{" "}
           </Typography>
         </Box>

@@ -31,12 +31,14 @@ export default function TopServices() {
               sx={{ height: "100%", display: "grid", placeItems: "center" }}
               className={"section-card"}
             >
-              <CardMedia
-                component={"img"}
-                src={"/images/" + service.image}
-                alt={service.title}
-                sx={{ maxWidth: "80%", height: 250 }}
-              />
+              <Box height={250}>
+                <CardMedia
+                  component={"img"}
+                  src={"/images/" + service.image}
+                  alt={service.title}
+                  sx={{ maxWidth: "80%", objectFit: "fill" }}
+                />
+              </Box>
               <CardContent sx={{ textAlign: "center" }}>
                 <Typography
                   component={"div"}
@@ -51,7 +53,9 @@ export default function TopServices() {
                   variant={"subtitle2"}
                   fontWeight={600}
                 >
-                  {service.text.length > 150 ? service.text.substring(0, 200) + "..." : service.text}
+                  {service.text.length > 150
+                    ? service.text.substring(0, 200) + "..."
+                    : service.text}
                 </Typography>
               </CardContent>
               <CardActions>
