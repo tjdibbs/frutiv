@@ -1,7 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import {Box, Fab, IconButton, Stack, useTheme, Zoom} from "@mui/material";
-import {Link} from "react-router-dom";
+import { Box, Fab, Stack, useTheme, Zoom } from "@mui/material";
 
 const ScrollToTop = () => {
   const [showTopBtn, setShowTopBtn] = React.useState(false);
@@ -31,12 +30,16 @@ const ScrollToTop = () => {
 
   return (
     <Box>
-      <Stack direction={'column'} gap={3} sx={{position: 'fixed', bottom: 10, right: 10, justifyContent: 'center'}}>
-        {/*<Box>*/}
-        {/*  <IconButton>*/}
-        {/*    */}
-        {/*  </IconButton>*/}
-        {/*</Box>*/}
+      <Stack
+        direction={"column"}
+        gap={3}
+        sx={{
+          position: "fixed",
+          bottom: 10,
+          right: 10,
+          justifyContent: "center",
+        }}
+      >
         <Zoom
           key={1}
           in={true}
@@ -46,12 +49,13 @@ const ScrollToTop = () => {
           }}
           unmountOnExit
         >
-          <a href="https://wa.me/+2349017241037?text=I want to get quote of your services" target={'_blank'}>
-            <Fab
-              size={'medium'}
-              color="inherit"
-            >
-              <Icon icon="logos:whatsapp" height='50' />
+          <a
+            href="https://wa.me/+2349017241037?text=I want to get quote of your services"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <Fab size={"medium"} color="inherit">
+              <Icon icon="logos:whatsapp" height="50" />
             </Fab>
           </a>
         </Zoom>
@@ -65,12 +69,17 @@ const ScrollToTop = () => {
           unmountOnExit
         >
           <Fab
-            size={'medium'}
+            size={"medium"}
             color="secondary"
             aria-label="add"
             onClick={goToTop}
           >
-            <Icon icon="bytesize:chevron-top" color="#fff" width={24} height="24" />
+            <Icon
+              icon="bytesize:chevron-top"
+              color="#fff"
+              width={24}
+              height="24"
+            />
           </Fab>
         </Zoom>
       </Stack>

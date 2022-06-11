@@ -65,7 +65,11 @@ const Index: React.FC = () => {
           </NavLink>
           <Box sx={{ display: "grid" }} className={"social-icons-container"}>
             <Stack direction={"row"} spacing={1}>
-              <a href="https://facebook.com/frutiv_tech" target={'_blank'}>
+              <a
+                href="https://facebook.com/frutiv_tech"
+                target={"_blank"}
+                rel="noreferrer"
+              >
                 <IconButton>
                   <Icon
                     icon="akar-icons:facebook-fill"
@@ -74,7 +78,11 @@ const Index: React.FC = () => {
                   />
                 </IconButton>
               </a>
-              <a href="https://twitter.com/frutiv_tech" target={'_blank'}>
+              <a
+                href="https://twitter.com/frutiv_tech"
+                target={"_blank"}
+                rel="noreferrer"
+              >
                 <IconButton>
                   <Icon
                     icon="brandico:twitter-bird"
@@ -83,7 +91,11 @@ const Index: React.FC = () => {
                   />
                 </IconButton>
               </a>
-              <a href="https://instagram.com/frutiv_tech" target={'_blank'}>
+              <a
+                href="https://instagram.com/frutiv_tech"
+                target={"_blank"}
+                rel="noreferrer"
+              >
                 <IconButton>
                   <Icon
                     icon="ant-design:instagram-filled"
@@ -111,7 +123,7 @@ const Index: React.FC = () => {
             </a>
           </Box>
           <IconButton
-            size={'large'}
+            size={"large"}
             sx={{ display: "none" }}
             className={"menu-toggler"}
             onClick={() => setOpen(!open)}
@@ -176,7 +188,11 @@ const Index: React.FC = () => {
             >
               <Box sx={{ display: "grid" }}>
                 <Stack direction={"row"} spacing={1}>
-                  <a href="https://facebook.com/frutiv_tech" target={'_blank'}>
+                  <a
+                    href="https://facebook.com/frutiv_tech"
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
                     <IconButton>
                       <Icon
                         icon="akar-icons:facebook-fill"
@@ -185,7 +201,11 @@ const Index: React.FC = () => {
                       />
                     </IconButton>
                   </a>
-                  <a href="https://twitter.com/frutiv_tech" target={'_blank'}>
+                  <a
+                    href="https://twitter.com/frutiv_tech"
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
                     <IconButton>
                       <Icon
                         icon="brandico:twitter-bird"
@@ -194,7 +214,11 @@ const Index: React.FC = () => {
                       />
                     </IconButton>
                   </a>
-                  <a href="https://instagram.com/frutiv_tech" target={'_blank'}>
+                  <a
+                    href="https://instagram.com/frutiv_tech"
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
                     <IconButton>
                       <Icon
                         icon="ant-design:instagram-filled"

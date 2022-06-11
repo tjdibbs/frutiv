@@ -31,12 +31,12 @@ export default function TopServices() {
               sx={{ height: "100%", display: "grid", placeItems: "center" }}
               className={"section-card"}
             >
-              <Box height={250}>
+              <Box height={250} width={"100%"} display={"grid"}>
                 <CardMedia
                   component={"img"}
                   src={"/images/" + service.image}
                   alt={service.title}
-                  sx={{ maxWidth: "80%", objectFit: "fill" }}
+                  sx={{ maxWidth: "80%", objectFit: "fill", m: "auto" }}
                 />
               </Box>
               <CardContent sx={{ textAlign: "center" }}>

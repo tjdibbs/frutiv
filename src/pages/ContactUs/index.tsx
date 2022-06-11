@@ -247,7 +247,12 @@ function ContactUs() {
                 </Grid>
               </Grid>
               <Box className="form-action" sx={{ mt: 3 }}>
-                <Button variant="outlined" color="secondary" size="large">
+                <Button
+                  variant="outlined"
+                  type={"submit"}
+                  color="secondary"
+                  size="large"
+                >
                   Get A Quote
                 </Button>
               </Box>
