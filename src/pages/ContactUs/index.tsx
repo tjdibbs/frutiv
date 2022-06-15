@@ -286,7 +286,7 @@ const infos = [
   },
   {
     title: "Telephone",
-    caption: "+2349017241037",
+    caption: "+2347085830807",
     icon: "fluent:call-28-filled",
   },
 ];

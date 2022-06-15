@@ -107,7 +107,7 @@ const Index: React.FC = () => {
             </Stack>
           </Box>
           <Box className={"phone-icon"}>
-            <a href="tel:+2349017241037">
+            <a href="tel:+2347085830807">
               <IconButton
                 sx={{
                   color: theme.palette.primary.light,
@@ -230,7 +230,7 @@ const Index: React.FC = () => {
                 </Stack>
               </Box>
               <Box>
-                <a href="tel:+2349017241037">
+                <a href="tel:+2347085830807">
                   <IconButton
                     sx={{
                       color: theme.palette.primary.light,
