@@ -50,7 +50,7 @@ const ScrollToTop = () => {
           unmountOnExit
         >
           <a
-            href="https://wa.me/+2349017241037?text=I want to get quote of your services"
+            href="https://wa.me/+2347085830807?text=I want to get quote of your services"
             target={"_blank"}
             rel="noreferrer"
           >
