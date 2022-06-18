@@ -186,27 +186,33 @@ export default function Footer() {
             className={"social-icons-container"}
           >
             <Stack direction={"row"} spacing={1}>
-              <IconButton>
-                <Icon
-                  icon="akar-icons:facebook-fill"
-                  color={"#E5E5E5"}
-                  height="18"
-                />
-              </IconButton>
-              <IconButton>
-                <Icon
-                  icon="brandico:twitter-bird"
-                  color={"#E5E5E5"}
-                  height="18"
-                />
-              </IconButton>
-              <IconButton>
-                <Icon
-                  icon="ant-design:instagram-filled"
-                  color={"#E5E5E5"}
-                  height="18"
-                />
-              </IconButton>
+              <Link href={"https://facebook.com/frutivtech"}>
+                <IconButton>
+                  <Icon
+                    icon="akar-icons:facebook-fill"
+                    color={"#E5E5E5"}
+                    height="18"
+                  />
+                </IconButton>
+              </Link>
+              <Link href={"https://twitter.com/FrutivT"}>
+                <IconButton>
+                  <Icon
+                    icon="brandico:twitter-bird"
+                    color={"#E5E5E5"}
+                    height="18"
+                  />
+                </IconButton>
+              </Link>
+              <Link href={"https://instagram.com/frutivtech"}>
+                <IconButton>
+                  <Icon
+                    icon="ant-design:instagram-filled"
+                    color={"#E5E5E5"}
+                    height="18"
+                  />
+                </IconButton>
+              </Link>
             </Stack>
           </Box>
           <Typography variant={"subtitle2"} textAlign={"center"} color={"#fff"}>

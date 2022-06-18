@@ -14,6 +14,7 @@ import {
   useTheme,
   Container,
   Typography,
+  Link,
 } from "@mui/material";
 import { Icon } from "@iconify/react";
 import links, { icons } from "./links";
@@ -188,45 +189,33 @@ const Index: React.FC = () => {
             >
               <Box sx={{ display: "grid" }}>
                 <Stack direction={"row"} spacing={1}>
-                  <a
-                    href="https://facebook.com/frutiv_tech"
-                    target={"_blank"}
-                    rel="noreferrer"
-                  >
+                  <Link href={"https://facebook.com/frutivtech"}>
                     <IconButton>
                       <Icon
                         icon="akar-icons:facebook-fill"
-                        color={"#9C9130"}
-                        height="24"
+                        color={"#E5E5E5"}
+                        height="18"
                       />
                     </IconButton>
-                  </a>
-                  <a
-                    href="https://twitter.com/frutiv_tech"
-                    target={"_blank"}
-                    rel="noreferrer"
-                  >
+                  </Link>
+                  <Link href={"https://twitter.com/FrutivT"}>
                     <IconButton>
                       <Icon
                         icon="brandico:twitter-bird"
-                        color={"#9C9130"}
-                        height="20"
+                        color={"#E5E5E5"}
+                        height="18"
                       />
                     </IconButton>
-                  </a>
-                  <a
-                    href="https://instagram.com/frutiv_tech"
-                    target={"_blank"}
-                    rel="noreferrer"
-                  >
+                  </Link>
+                  <Link href={"https://instagram.com/frutivtech"}>
                     <IconButton>
                       <Icon
                         icon="ant-design:instagram-filled"
-                        color={"#9C9130"}
-                        height="24"
+                        color={"#E5E5E5"}
+                        height="18"
                       />
                     </IconButton>
-                  </a>
+                  </Link>
                 </Stack>
               </Box>
               <Box>
