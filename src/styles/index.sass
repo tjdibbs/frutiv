@@ -230,19 +230,11 @@ html
       content: ""
       background-color: rgba(240, 105, 8, 9%)
       width: 100%
-      height: 130%
-      top: 50%
+      height: 100%
       border-radius: 100%
       filter: blur(5em)
     .swiper-slide
       min-width: 300px
-
-  @keyframes Scroll
-    from 
-      transform: translateX(-100%)
-    to
-      transform: translateX(0%)
-    
 
   // Portfolio stylesheet 
   .section-web-services
@@ -252,42 +244,13 @@ html
     max-width: 100vw
     height: auto
     overflow: hidden
-    .list-wrapper
-      overflow: auto hidden
-      @media (min-width: 550px)
-        &::-webkit-scrollbar
-          background: #fff
-          height: 10px
-        &::-webkit-scrollbar-thumb
-          background:  $primary
-          border-radius: 50px
     .website-list
-      display: flex
-      width: max-content
-      margin: auto
-      justify-content: center
-      overflow: auto
-      gap: 2em
-      padding: 2em
-      flex-wrap: nowrap
-      position: relative
       z-index: 10
-      scroll-behavior: auto
-      animation: Scroll 20s 1s ease-in-out infinite alternate-reverse
-      @media (min-width: 550px)
-        animation-duration: 30s
-        &::-webkit-scrollbar
-          background: #fff
-          height: 10px
-        &::-webkit-scrollbar-thumb
-          background:  $primary
-          border-radius: 50px
       .website-cover
         width: 600px
-        max-width: 100vw
+        max-width: 100%
         border-radius: 20px
       .content
-        width: 400px
         max-width: 90%
         margin: auto
   .mobile-applications

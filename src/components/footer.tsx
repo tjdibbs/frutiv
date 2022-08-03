@@ -2,10 +2,8 @@ import React from "react";
 import {
   Box,
   Chip,
-  Collapse,
   IconButton,
   List,
-  ListItemButton,
   ListItemText,
   Stack,
   Typography,
@@ -17,17 +15,6 @@ import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
-  const listItemStyle = {
-    bgcolor: "rgba(0,0,0,.1)",
-    px: 1,
-    borderRadius: "5px",
-    mb: 1,
-  };
   return (
     <Box bgcolor={theme.palette.primary.main} className={"footer-container"}>
       <Box className="footer-wrapper" p={3} pt={"6em"}>
@@ -80,78 +67,22 @@ export default function Footer() {
               component="nav"
               aria-labelledby="nested-list-subheader"
             >
-              <NavLink
-                to={"/about-us"}
-                style={{ color: "#fff", textDecoration: "none" }}
-              >
-                <ListItemButton disableGutters sx={listItemStyle}>
-                  <ListItemText primary="About Us" />
-                </ListItemButton>
-              </NavLink>
-              <NavLink
-                to={"/portfolio"}
-                style={{ color: "#fff", textDecoration: "none" }}
-              >
-                <ListItemButton disableGutters sx={listItemStyle}>
-                  <ListItemText primary="Portfolio" />
-                </ListItemButton>
-              </NavLink>
-              <ListItemButton
-                disableGutters
-                sx={listItemStyle}
-                onClick={handleClick}
-              >
-                <Stack
-                  direction={"row"}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                  width={"100%"}
-                >
+              {links.map((link) => {
+                return (
                   <NavLink
-                    to={"/services"}
-                    style={{ color: "#fff", textDecoration: "none" }}
+                    key={link.title}
+                    to={link.url}
+                    style={{
+                      color: "#fff",
+                      display: "block",
+                      textDecoration: "none",
+                      marginBottom: "1em",
+                    }}
                   >
-                    <ListItemText primary="Services" />
+                    <ListItemText primary={link.title} />
                   </NavLink>
-                  {open ? (
-                    <Icon icon="clarity:angle-line" color="#fff" height="24" />
-                  ) : (
-                    <Icon
-                      icon="clarity:angle-line"
-                      color="#fff"
-                      height="24"
-                      rotate={2}
-                    />
-                  )}
-                </Stack>
-              </ListItemButton>
-              <Collapse in={open} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding sx={{ color: "#E5E5E5" }}>
-                  <ListItemButton sx={{ pl: 4 }}>
-                    <ListItemText primary="Digital Marketing" />
-                  </ListItemButton>
-                  <ListItemButton sx={{ pl: 4 }}>
-                    <ListItemText primary="Web Development" />
-                  </ListItemButton>
-                  <ListItemButton sx={{ pl: 4 }}>
-                    <ListItemText primary="UI/UX" />
-                  </ListItemButton>
-                  <ListItemButton sx={{ pl: 4 }}>
-                    <ListItemText primary="Blockchain Development" />
-                  </ListItemButton>
-                  <ListItemButton sx={{ pl: 4 }}>
-                    <ListItemText primary="Branding" />
-                  </ListItemButton>
-                </List>
-              </Collapse>
-              <NavLink
-                to={"/our-hub"}
-                style={{ color: "#fff", textDecoration: "none" }}
-              >
-                <ListItemButton disableGutters sx={listItemStyle}>
-                  <ListItemText primary="Frutiv Tech Hub" />
-                </ListItemButton>
-              </NavLink>
+                );
+              })}
             </List>
           </Box>
           <Box className="contact-us">
@@ -223,3 +154,22 @@ export default function Footer() {
     </Box>
   );
 }
+
+const links = [
+  {
+    title: "About us",
+    url: "/about-us",
+  },
+  {
+    title: "Portfolio",
+    url: "/portfolio",
+  },
+  {
+    title: "services",
+    url: "/services",
+  },
+  {
+    title: "Frutiv tech hub",
+    url: "/our-hub",
+  },
+];

@@ -8,6 +8,8 @@ import {
   Typography,
   useTheme,
   Container,
+  Grid,
+  Card,
 } from "@mui/material";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -37,7 +39,6 @@ const websites = [
 
 function Portfolio() {
   const theme = useTheme();
-  const webRef = React.useRef<HTMLDivElement>(null);
 
   return (
     <Box className="portfolio-wrapper">
@@ -117,52 +118,60 @@ function Portfolio() {
           </Typography>
         </Box>
         <Box className="list-wrapper">
-          <Box className="website-list" ref={webRef}>
+          <Grid container spacing={4} className="website-list">
             {websites.map((website, index) => {
               return (
-                <Box className="website zablot" key={index}>
-                  <Box className="image-wrapper">
-                    <img
-                      src={website.image}
-                      className="website-cover"
-                      alt="zablot website"
-                      style={{ boxShadow: theme.shadows[10] }}
-                    />
-                  </Box>
-                  <Box className="details content">
-                    <Typography
-                      component={"h3"}
-                      variant="h6"
-                      my={3}
-                      fontWeight={800}
-                      color="secondaru"
-                      textAlign="center"
-                    >
-                      {website.name}
-                    </Typography>
-                    <Typography
-                      component={"h3"}
-                      variant="subtitle2"
-                      mb={3}
-                      textAlign="center"
-                    >
-                      {website.text}
-                    </Typography>
-                    <a href={website.url} style={{ textDecoration: "none" }}>
-                      <Button
-                        variant="outlined"
-                        sx={{ textTransform: "none", borderRadius: 5 }}
-                        size="large"
-                        color="secondary"
+                <Grid
+                  item
+                  sm={12}
+                  md={6}
+                  className="website zablot"
+                  key={index}
+                >
+                  <Card elevation={3} sx={{ p: 2, height: "100%" }}>
+                    <Box className="image-wrapper">
+                      <img
+                        src={website.image}
+                        className="website-cover"
+                        alt="zablot website"
+                        style={{ boxShadow: theme.shadows[10] }}
+                      />
+                    </Box>
+                    <Box className="details content">
+                      <Typography
+                        component={"h3"}
+                        variant="h6"
+                        my={3}
+                        fontWeight={800}
+                        color="secondaru"
+                        textAlign="center"
                       >
-                        Visit Website
-                      </Button>
-                    </a>
-                  </Box>
-                </Box>
+                        {website.name}
+                      </Typography>
+                      <Typography
+                        component={"h3"}
+                        variant="subtitle2"
+                        mb={3}
+                        textAlign="center"
+                      >
+                        {website.text}
+                      </Typography>
+                      <a href={website.url} style={{ textDecoration: "none" }}>
+                        <Button
+                          variant="outlined"
+                          sx={{ textTransform: "none", borderRadius: 5 }}
+                          size="large"
+                          color="secondary"
+                        >
+                          Visit Website
+                        </Button>
+                      </a>
+                    </Box>
+                  </Card>
+                </Grid>
               );
             })}
-          </Box>
+          </Grid>
         </Box>
       </Box>
       <Box className="section-mobile" sx={{ my: 10 }}>
@@ -319,7 +328,7 @@ function Portfolio() {
       <Container>
         <GetStarted />
       </Container>
-  
+
       <Footer />
     </Box>
   );
