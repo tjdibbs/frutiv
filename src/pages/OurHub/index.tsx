@@ -166,7 +166,7 @@ function OurHub() {
               </Typography>
 
               <Box className="groups" mb={2}>
-                <Stack direction={"row"} gap={3} flexWrap={"wrap"}>
+                <Stack direction={"row"} gap={1.5} flexWrap={"wrap"}>
                   {[
                     "UI/UX",
                     "Front-end development",
@@ -238,7 +238,7 @@ function OurHub() {
                 payment needs to be made to make you feel you put something in
                 before you joined and you need to be serious and participating
                 and active in the hub. The price token is{" "}
-                <b style={{ color: "#F06908" }}>#10,000</b>, if you know the
+                <b style={{ color: "#F06908" }}>#30,000</b>, if you know the
                 value of what you will get and even in a fast way, you won't say
                 you are paying for what u will get. The payment is just to get
                 seriousness from you and it's a mandate payment you need to make
@@ -246,7 +246,7 @@ function OurHub() {
                 <b style={{ color: "#F06908" }}>FRUTIV HUB</b>.
               </Typography>
               <Box className="groups" mb={2}>
-                <Stack direction={"row"} gap={3} flexWrap={"wrap"}>
+                <Stack direction={"row"} gap={1.5} flexWrap={"wrap"}>
                   {[
                     "Web 3 - Block chain development",
                     "Advance and modern technologies",
