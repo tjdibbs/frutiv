@@ -19,6 +19,14 @@ import Footer from "../../components/footer";
 
 const Services = (): JSX.Element => {
   const theme = useTheme();
+
+  React.useLayoutEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <React.Fragment>
       <Container className="our-services-wrapper">
@@ -64,7 +72,9 @@ const Services = (): JSX.Element => {
                   variant={"subtitle2"}
                   px={1}
                 >
-                  We provide high-quality digital services, with full analytics, that help you grow your social media, reach your target audience and improve your bottom line.
+                  We provide high-quality digital services, with full analytics,
+                  that help you grow your social media, reach your target
+                  audience and improve your bottom line.
                 </Typography>
               </Box>
             </Box>
@@ -73,7 +83,10 @@ const Services = (): JSX.Element => {
             </Box>
           </Box>
         </Box>
-        <Box className={"brief-about-text"} sx={{ width: "100%", my: "5em !important"  }}>
+        <Box
+          className={"brief-about-text"}
+          sx={{ width: "100%", my: "5em !important" }}
+        >
           <Typography
             variant="subtitle1"
             color="secondary"
@@ -89,12 +102,15 @@ const Services = (): JSX.Element => {
             position={"relative"}
             zIndex={100}
           >
-            Let us help you reach your target audience and generate website-traffic as steady as a flowing stream.
-            At Frutiv Tech, we place more emphasis on creating viable partnerships, rather than on merely getting
-            new clients. Hence, we always work from the perspective of a business owner, and treat your business
-            just like it were ours. Our methods, pricing, services
-            and products are administered with the utmost level of transparency, and you can be rest-assured
-            that we will go to great lengths in order to help you to grow your business.
+            Let us help you reach your target audience and generate
+            website-traffic as steady as a flowing stream. At Frutiv Tech, we
+            place more emphasis on creating viable partnerships, rather than on
+            merely getting new clients. Hence, we always work from the
+            perspective of a business owner, and treat your business just like
+            it were ours. Our methods, pricing, services and products are
+            administered with the utmost level of transparency, and you can be
+            rest-assured that we will go to great lengths in order to help you
+            to grow your business.
           </Typography>
         </Box>
         <Box className={"section-services"}>
@@ -138,7 +154,9 @@ const Services = (): JSX.Element => {
                       maxWidth={400}
                       m={"auto"}
                     >
-                      {service.text.length > 150 ? service.text.substring(0, 150) + "..." : service.text}
+                      {service.text.length > 150
+                        ? service.text.substring(0, 150) + "..."
+                        : service.text}
                     </Typography>
                   </CardContent>
                   <CardActions>

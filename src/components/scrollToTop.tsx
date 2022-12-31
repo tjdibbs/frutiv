@@ -55,7 +55,7 @@ const ScrollToTop = () => {
             rel="noreferrer"
           >
             <Fab size={"medium"} color="inherit">
-              <Icon icon="logos:whatsapp" height="50" />
+              <Icon icon="logos:whatsapp-icon" height="50" />
             </Fab>
           </a>
         </Zoom>

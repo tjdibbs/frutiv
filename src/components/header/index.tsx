@@ -124,16 +124,10 @@ const Index: React.FC = () => {
             </a>
           </Box>
           <IconButton
-            size={"large"}
-            sx={{ display: "none" }}
-            className={"menu-toggler"}
+            sx={{ display: { sm: "none" } }}
             onClick={() => setOpen(!open)}
           >
-            <Icon
-              icon="heroicons-solid:menu-alt-3"
-              color="#545454"
-              height="24"
-            />
+            <Icon icon="heroicons-solid:menu-alt-3" color="#545454" />
           </IconButton>
         </Toolbar>
       </Container>
@@ -193,7 +187,7 @@ const Index: React.FC = () => {
                     <IconButton>
                       <Icon
                         icon="akar-icons:facebook-fill"
-                        color={"#E5E5E5"}
+                        color={"#777272"}
                         height="18"
                       />
                     </IconButton>
@@ -202,7 +196,7 @@ const Index: React.FC = () => {
                     <IconButton>
                       <Icon
                         icon="brandico:twitter-bird"
-                        color={"#E5E5E5"}
+                        color={"#777272"}
                         height="18"
                       />
                     </IconButton>
@@ -211,7 +205,7 @@ const Index: React.FC = () => {
                     <IconButton>
                       <Icon
                         icon="ant-design:instagram-filled"
-                        color={"#E5E5E5"}
+                        color={"#777272"}
                         height="18"
                       />
                     </IconButton>
@@ -236,15 +230,11 @@ const Index: React.FC = () => {
               </Box>
             </Toolbar>
           </Box>
-          <Box
-            className={"navigation-container"}
-            // sx={{ bgcolor: theme.palette.primary.light }}
-          >
+          <Box className={"navigation-container"}>
             <List>
               {links.map((link, index) => {
                 let url = "/" + link.replace(" ", "-").toLocaleLowerCase();
                 const applyStyle = ({ isActive }: { isActive: boolean }) => {
-                  console.log({ isActive });
                   return isActive
                     ? {
                         textDecoration: "none",

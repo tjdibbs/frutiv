@@ -9,30 +9,76 @@ import {
   Grid,
   Stack,
   Button,
+  CircularProgress,
 } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { NavLink } from "react-router-dom";
 import GetStarted from "../../components/get-started";
 import Footer from "../../components/footer";
 import { useForm } from "react-hook-form";
+
 type State = {
   name: string;
   email: string;
   subject: string;
   message: string;
+  phone: string;
 };
 
 function ContactUs() {
   const theme = useTheme();
+  const [loading, setLoading] = React.useState<boolean>(false);
   const {
     register,
     handleSubmit,
+    reset,
+    watch,
     formState: { errors },
   } = useForm<State>();
+  const values = watch();
 
-  const onSubmit = (formData: State) => {
-    console.log({ formData });
+  React.useLayoutEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+  const onSubmit = async (formData: State) => {
+    try {
+      setLoading(true);
+      let options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      };
+      const request = await fetch("http://api.frutiv.com/send-email", options);
+      const { success } = await request.json();
+
+      if (success) {
+        reset();
+
+        let textarea = document.getElementById(
+          "textarea"
+        ) as HTMLTextAreaElement;
+        textarea.value = "";
+
+        setLoading(false);
+        alert("Your form has been sent successfully, we will get back to soon");
+        return;
+      }
+
+      throw new Error();
+    } catch (error) {
+      setLoading(false);
+      alert(
+        "We are unable to process your form, please refresh your page and try again, or call us directly."
+      );
+    }
   };
+
   return (
     <React.Fragment>
       <Container className="contact-us-wrapper">
@@ -204,7 +250,11 @@ function ContactUs() {
                     color={"secondary"}
                     {...register("name", { required: true })}
                     fullWidth
+                    value={values.name}
                     error={Boolean(errors.name)}
+                    helperText={
+                      Boolean(errors.name) && "This field is required"
+                    }
                   />
                 </Grid>
                 <Grid
@@ -215,34 +265,60 @@ function ContactUs() {
                   }}
                 >
                   <TextField
+                    label="Phone number"
+                    variant={"outlined"}
+                    color={"secondary"}
+                    {...register("phone", { required: true })}
+                    fullWidth
+                    value={values.phone}
+                    error={Boolean(errors.phone)}
+                    helperText={
+                      Boolean(errors.phone) && "This field is required"
+                    }
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
                     label="Your Email"
                     variant={"outlined"}
                     color={"secondary"}
                     {...register("email", { required: true })}
+                    value={values.email}
                     fullWidth
                     error={Boolean(errors.email)}
+                    helperText={
+                      Boolean(errors.email) && "This field is required"
+                    }
                   />
                 </Grid>
-                <Grid item sx={{ width: "100%" }}>
+                <Grid item xs={12}>
                   <TextField
                     label="Subject"
                     variant={"outlined"}
                     color={"secondary"}
                     {...register("subject", { required: true })}
                     fullWidth
+                    value={values.subject}
                     error={Boolean(errors.subject)}
+                    helperText={
+                      Boolean(errors.subject) && "This field is required"
+                    }
                   />
                 </Grid>
                 <Grid item sx={{ width: "100%" }}>
                   <TextField
                     label="Message"
                     variant={"outlined"}
+                    id={"textarea"}
                     color={"secondary"}
                     {...register("message", { required: true })}
                     multiline
                     rows={4}
                     fullWidth
                     error={Boolean(errors.message)}
+                    helperText={
+                      Boolean(errors.name) && "This field is required"
+                    }
                   />
                 </Grid>
               </Grid>
@@ -252,8 +328,16 @@ function ContactUs() {
                   type={"submit"}
                   color="secondary"
                   size="large"
+                  disabled={loading}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 2,
+                  }}
                 >
-                  Get A Quote
+                  {loading && <CircularProgress size={25} />}
+                  <span>Get A Quote</span>
                 </Button>
               </Box>
             </Box>

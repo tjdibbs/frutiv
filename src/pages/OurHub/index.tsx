@@ -15,6 +15,14 @@ import Footer from "../../components/footer";
 
 function OurHub() {
   const theme = useTheme();
+
+  React.useLayoutEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <React.Fragment>
       <Container className="hub-wrapper">

@@ -41,6 +41,14 @@ const Index: React.FC<Props> = (props): JSX.Element => {
       return null;
     }
   );
+
+  React.useLayoutEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <Box className="home-container">
       <div className="home-wrapper">
@@ -79,10 +87,7 @@ const Index: React.FC<Props> = (props): JSX.Element => {
                   Let us help you reach your target audience
                 </Typography>
 
-                
-
-          <br />
-
+                <br />
               </Box>
               <Box
                 className={"float-right image-wrap"}
@@ -125,12 +130,7 @@ const Index: React.FC<Props> = (props): JSX.Element => {
         >
           <Three small />
           <Box className={"brief-about-text"} sx={{ width: "100%" }}>
-            <Typography
-              variant="h6"
-              color="secondary"
-              fontWeight={800}
-              mb={3}
-            >
+            <Typography variant="h6" color="secondary" fontWeight={800} mb={3}>
               You've Come To The Right Place
             </Typography>
             <Typography
@@ -141,11 +141,12 @@ const Index: React.FC<Props> = (props): JSX.Element => {
               zIndex={100}
             >
               If you’re a business owner or marketing executive and you’re
-              looking for an awesome and enthusiastic partner to help you
-              grow your business—from strategy creation to execution and
-              ongoing optimization, you’ve come to the right place. Frutiv Tech Company helps companies increase leads and sales from the web,
-              differentiate their brand, and optimize their marketing costs.
-              The result? MORE BUSINESS GROWTH.
+              looking for an awesome and enthusiastic partner to help you grow
+              your business—from strategy creation to execution and ongoing
+              optimization, you’ve come to the right place. Frutiv Tech Company
+              helps companies increase leads and sales from the web,
+              differentiate their brand, and optimize their marketing costs. The
+              result? MORE BUSINESS GROWTH.
             </Typography>
           </Box>
         </Container>
